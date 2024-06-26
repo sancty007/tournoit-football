@@ -1,0 +1,49 @@
+services:
+  backend:
+    build:
+      context: ./backend
+
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/backend
+    environment:
+      - DATABASE_URL=oracle://sys:welcome123@oracle-db:1521/XEPDB1
+      - PYTHONUNBUFFERED=1
+    command: >
+      bash -c "python manage.py makemigrations &&
+               python manage.py migrate &&
+               python manage.py runserver 0.0.0.0:8000"
+    depends_on:
+      - oracle-db
+    networks:
+      - default
+
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/frontend
+    environment:
+      - REACT_APP_BACKEND_URL=http://backend:8000
+    networks:
+      - default
+
+  oracle-db:
+    image: container-registry.oracle.com/database/express
+    container_name: oracle-db
+    ports:
+      - "1522:1521" # Remappez le port 1521 du conteneur à 1522 sur votre machine
+    environment:
+      - ORACLE_PDB=XEPDB1
+      - ORACLE_PWD=welcome123
+    volumes:
+      - ./oracle-data:/opt/oracle/oradata
+    networks:
+      - default
+
+networks:
+  default:
+    driver: bridge
