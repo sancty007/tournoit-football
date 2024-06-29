@@ -88,12 +88,14 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.oracle',
-        'NAME': 'XEPDB1',         # Nom de la base de données Oracle (service_name)
-        'USER': 'sys',        # Utilisateur Oracle
-        'PASSWORD': 'welcome123',  # Mot de passe de l'utilisateur Oracle
-        'HOST': 'oracle-db',  # Adresse IP ou nom d'hôte du conteneur Docker Oracle
-        'PORT': '1522',       # Port Oracle
-       
+        'NAME': 'localhost:1521/XE',
+        'USER': 'sys',
+        'PASSWORD': 'oracle123',
+        'HOST': '',
+        'PORT': '',
+        'OPTIONS': {
+            'mode': cx_Oracle.SYSDBA,
+        },
     }
 }
 
