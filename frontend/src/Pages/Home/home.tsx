@@ -5,6 +5,7 @@ import home from '/images/home.png';
 import section2 from '/images/section2.jpeg';
 import { InfiniteMovingCards } from "../../components/ui/infinite-moving-cards";
 import { testimonials } from "../../data/testimonials";
+import MainMenu from "../../components/Main-menu";
 
 
 
@@ -14,6 +15,7 @@ export const Home  =() =>{
 
     return(
         <>
+            <MainMenu/>
             <div className='container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 items-center py-7 '> 
             
                 <div className='grid grid-col-1  gap-8 mt-8 lg:mt-0'>
