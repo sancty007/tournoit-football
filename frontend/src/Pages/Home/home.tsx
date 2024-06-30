@@ -27,7 +27,7 @@ export const Home  =() =>{
                         {/* <Button className='py-8 mx-auto'>créer un tournoi</Button> */}
                         <Button
                             borderRadius="1.75rem"
-                            className="bg-white dark:bg-slate-900 text-black dark:text-white border-neutral-200 dark:border-slate-800">
+                            className="bg-white dark:bg-slate-900 text-black dark:text-white border-neutral-200 dark:border-slate-800 ">
                             créer un tournoit
                         </Button>
                         <div>

@@ -76,28 +76,23 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 
-
-
-
-# Configurez cx_Oracle pour l'utilisation de Thin Mode (connexion à distance)
-#cx_Oracle.init_oracle_client(lib_dir=None)
-
-
 # Configuration de la base de données Oracle
+
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.oracle',
         'NAME': 'localhost:1521/XE',
         'USER': 'sys',
         'PASSWORD': 'oracle123',
         'HOST': '',
         'PORT': '',
-        'OPTIONS': {
-            'mode': cx_Oracle.SYSDBA,
+       'OPTIONS': {
+           'mode': cx_Oracle.SYSDBA,
         },
     }
 }
+
+
 
  
 # Password validation

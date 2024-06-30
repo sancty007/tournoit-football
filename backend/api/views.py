@@ -21,7 +21,7 @@ def list_schemas(request):
     try:
         with connection.cursor() as cursor:
             # Exécuter la requête SQL pour récupérer les noms d'utilisateur (schémas)
-            cursor.execute("SELECT username FROM all_users")
+            cursor.execute("select * from tab")
             
             # Récupérer tous les résultats
             schemas = cursor.fetchall()
@@ -32,7 +32,7 @@ def list_schemas(request):
             schema_list += f"<li>{schema[0]}</li>"
         schema_list += "</ul>"
         
-        return HttpResponse(f"Liste des schémas : {schema_list}")
+        return HttpResponse(f"Liste des tables : {schema_list}")
     
     except Exception as e:
         return HttpResponse(f"Erreur lors de la récupération des schémas : {e}")

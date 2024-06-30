@@ -32,6 +32,14 @@
         "documentation": {}
     },
     {
+        "label": "connection",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "TestCase",
         "importPath": "django.test",
         "description": "django.test",
@@ -65,6 +73,14 @@
     },
     {
         "label": "JsonResponse",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "HttpResponse",
         "importPath": "django.http",
         "description": "django.http",
         "isExtraImport": true,
@@ -161,7 +177,7 @@
         "kind": 5,
         "importPath": "backend.api.urls",
         "description": "backend.api.urls",
-        "peekOfCode": "urlpatterns = [\n    path('tasks/', views.tasks_list, name='tasks_list'),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('tasks/', views.tasks_list, name='tasks_list'),\n    path('test_connection/', views.test_connection),\n    path('list_schemas/', views.list_schemas),\n    # ... autres chemins d'URL\n]",
         "detail": "backend.api.urls",
         "documentation": {}
     },
@@ -170,7 +186,25 @@
         "kind": 2,
         "importPath": "backend.api.views",
         "description": "backend.api.views",
-        "peekOfCode": "def tasks_list(request):\n    return JsonResponse({\"message\": \"This is a simple response from the tasks_list view.\"})",
+        "peekOfCode": "def tasks_list(request):\n    return JsonResponse({\"message\": \"This is a simple response from the tasks_list view.\"})\ndef test_connection(request):\n    try:\n        with connection.cursor() as cursor:\n            cursor.execute(\"SELECT 1 FROM dual\")\n            result = cursor.fetchone()\n        return HttpResponse(f\"Connexion réussie: {result}\")\n    except Exception as e:\n        return HttpResponse(f\"Erreur de connexion : {e}\")",
+        "detail": "backend.api.views",
+        "documentation": {}
+    },
+    {
+        "label": "test_connection",
+        "kind": 2,
+        "importPath": "backend.api.views",
+        "description": "backend.api.views",
+        "peekOfCode": "def test_connection(request):\n    try:\n        with connection.cursor() as cursor:\n            cursor.execute(\"SELECT 1 FROM dual\")\n            result = cursor.fetchone()\n        return HttpResponse(f\"Connexion réussie: {result}\")\n    except Exception as e:\n        return HttpResponse(f\"Erreur de connexion : {e}\")\ndef list_schemas(request):\n    try:",
+        "detail": "backend.api.views",
+        "documentation": {}
+    },
+    {
+        "label": "list_schemas",
+        "kind": 2,
+        "importPath": "backend.api.views",
+        "description": "backend.api.views",
+        "peekOfCode": "def list_schemas(request):\n    try:\n        with connection.cursor() as cursor:\n            # Exécuter la requête SQL pour récupérer les noms d'utilisateur (schémas)\n            cursor.execute(\"select * from tab\")\n            # Récupérer tous les résultats\n            schemas = cursor.fetchall()\n        # Formater les résultats pour l'affichage\n        schema_list = \"<ul>\"\n        for schema in schemas:",
         "detail": "backend.api.views",
         "documentation": {}
     },
@@ -260,7 +294,7 @@
         "kind": 5,
         "importPath": "backend.backend.settings",
         "description": "backend.backend.settings",
-        "peekOfCode": "WSGI_APPLICATION = 'backend.wsgi.application'\n# Database\n# https://docs.djangoproject.com/en/5.0/ref/settings/#databases\n# Configurez cx_Oracle pour l'utilisation de Thin Mode (connexion à distance)\n#cx_Oracle.init_oracle_client(lib_dir=None)\n# Configuration de la base de données Oracle\nDATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.oracle',\n        'NAME': 'XEPDB1',         # Nom de la base de données Oracle (service_name)",
+        "peekOfCode": "WSGI_APPLICATION = 'backend.wsgi.application'\n# Database\n# https://docs.djangoproject.com/en/5.0/ref/settings/#databases\n# Configuration de la base de données Oracle\nDATABASES = {\n    'default': {\n        'NAME': 'localhost:1521/XE',\n        'USER': 'sys',\n        'PASSWORD': 'oracle123',\n        'HOST': '',",
         "detail": "backend.backend.settings",
         "documentation": {}
     },
@@ -269,7 +303,7 @@
         "kind": 5,
         "importPath": "backend.backend.settings",
         "description": "backend.backend.settings",
-        "peekOfCode": "DATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.oracle',\n        'NAME': 'XEPDB1',         # Nom de la base de données Oracle (service_name)\n        'USER': 'sys',        # Utilisateur Oracle\n        'PASSWORD': 'welcome123',  # Mot de passe de l'utilisateur Oracle\n        'HOST': 'oracle-db',  # Adresse IP ou nom d'hôte du conteneur Docker Oracle\n        'PORT': '1522',       # Port Oracle\n    }\n}",
+        "peekOfCode": "DATABASES = {\n    'default': {\n        'NAME': 'localhost:1521/XE',\n        'USER': 'sys',\n        'PASSWORD': 'oracle123',\n        'HOST': '',\n        'PORT': '',\n       'OPTIONS': {\n           'mode': cx_Oracle.SYSDBA,\n        },",
         "detail": "backend.backend.settings",
         "documentation": {}
     },
