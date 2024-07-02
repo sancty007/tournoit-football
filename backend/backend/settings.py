@@ -40,9 +40,6 @@ INSTALLED_APPS = [
     'corsheaders',
     # nos application de gestion de foot 
     'users',
-    'notifications',
-    'supportercomments',
-    'matches',
     'tournaments',
     'teams',
 ]

@@ -30,3 +30,4 @@ Dans le terminal, naviguez vers le répertoire contenant le Dockerfile et constr
 
 docker build -t my-django-app .//construire l'application
 
+
