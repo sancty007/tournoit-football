@@ -38,6 +38,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'api',
     'corsheaders',
+    # nos application de gestion de foot 
+    'users',
+    'notifications',
+    'supportercomments',
+    'matches',
+    'tournaments',
+    'teams',
 ]
 
 MIDDLEWARE = [
@@ -76,26 +83,21 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 
-
-
-
-# Configurez cx_Oracle pour l'utilisation de Thin Mode (connexion à distance)
-#cx_Oracle.init_oracle_client(lib_dir=None)
-
-
 # Configuration de la base de données Oracle
+
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.oracle',
-        'NAME': 'XEPDB1',         # Nom de la base de données Oracle (service_name)
-        'USER': 'sys',        # Utilisateur Oracle
-        'PASSWORD': 'welcome123',  # Mot de passe de l'utilisateur Oracle
-        'HOST': 'oracle-db',  # Adresse IP ou nom d'hôte du conteneur Docker Oracle
-        'PORT': '1522',       # Port Oracle
-       
+        'NAME': 'localhost:1521/XE',  # Nom de l'instance Oracle
+        'USER': 'admin_user',         # Utilisateur Oracle
+        'PASSWORD': 'admin_user',     # Mot de passe de l'utilisateur
+        'HOST': '',                   # Laissez vide pour une connexion locale
+        'PORT': '',                   # Laissez vide pour utiliser le port par défaut
+        # Ne spécifiez pas 'OPTIONS' pour utiliser le mode par défaut
     }
 }
+
 
  
 # Password validation
