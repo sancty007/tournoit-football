@@ -6,7 +6,7 @@ import { Button } from "./ui/button"
 export const Header  = () =>{
 
     return(
-       <nav className="fixed top-0 left-0 w-full p-7 shadow-md z-50 md:block hidden">
+       <nav className="header">
             <div className="container mx-auto flex justify-between items-center  ">
                 <div>
                     <ul className="flex gap-8">

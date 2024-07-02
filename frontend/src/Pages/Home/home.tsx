@@ -19,9 +19,9 @@ export const Home  =() =>{
             <div className='container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 items-center py-7 '> 
             
                 <div className='grid grid-col-1  gap-8 mt-8 lg:mt-0'>
-                    <h1 className='font-bold text-2xl lg:text-5xl'>Lorem ipsum dolor sit amet consectetur adipisicing elit.Ad<FlipWords words={words}/></h1>
+                    <h1 className='font-bold text-2xl lg:text-5xl'>Bienvenue sur notre plateforme de gestion de tournois de football. <FlipWords words={words}/></h1>
 
-                    <p className=''>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti dolorem, aspernatur quis dolorum dolores tenetur laborum libero consequatur obcaecati possimus, sint hic expedita totam corrupti eaque ipsam sed. Temporibus, nemo?</p>
+                    <p className=''>Bienvenue sur notre plateforme de gestion de tournois de football. Organisez et gérez vos tournois facilement avec notre outil intuitif et puissant.</p>
 
                     <div className='grid grid-flow-col items-center justify-start gap-4'>
                         {/* <Button className='py-8 mx-auto'>créer un tournoi</Button> */}

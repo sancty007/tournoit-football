@@ -2,6 +2,7 @@
   @tailwind components;
   @tailwind utilities;
 
+  
   @layer base {
     :root {
       --background: 0 0% 100%;
@@ -72,5 +73,9 @@
     }
     body {
       @apply bg-background text-foreground;
+
+    }
+    .header{
+      @apply fixed top-0 left-0 w-full p-7 border-b z-50 md:block hidden bg-background/90 backdrop-blur-sm ;
     }
   }

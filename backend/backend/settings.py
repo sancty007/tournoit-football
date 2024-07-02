@@ -38,6 +38,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'api',
     'corsheaders',
+    # nos application de gestion de foot 
+    'users',
+    'notifications',
+    'supportercomments',
+    'matches',
+    'tournaments',
+    'teams',
 ]
 
 MIDDLEWARE = [
@@ -81,17 +88,15 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 
 DATABASES = {
     'default': {
-        'NAME': 'localhost:1521/XE',
-        'USER': 'sys',
-        'PASSWORD': 'oracle123',
-        'HOST': '',
-        'PORT': '',
-       'OPTIONS': {
-           'mode': cx_Oracle.SYSDBA,
-        },
+        'ENGINE': 'django.db.backends.oracle',
+        'NAME': 'localhost:1521/XE',  # Nom de l'instance Oracle
+        'USER': 'admin_user',         # Utilisateur Oracle
+        'PASSWORD': 'admin_user',     # Mot de passe de l'utilisateur
+        'HOST': '',                   # Laissez vide pour une connexion locale
+        'PORT': '',                   # Laissez vide pour utiliser le port par défaut
+        # Ne spécifiez pas 'OPTIONS' pour utiliser le mode par défaut
     }
 }
-
 
 
  
