@@ -168,47 +168,7 @@
         "documentation": {}
     },
     {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
         "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
         "importPath": "django.db",
         "description": "django.db",
         "isExtraImport": true,
@@ -240,6 +200,14 @@
         "documentation": {}
     },
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -264,23 +232,7 @@
         "documentation": {}
     },
     {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
         "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
         "importPath": "django.db",
         "description": "django.db",
         "isExtraImport": true,
@@ -443,62 +395,6 @@
         "documentation": {}
     },
     {
-        "label": "Team",
-        "importPath": "teams.models",
-        "description": "teams.models",
-        "isExtraImport": true,
-        "detail": "teams.models",
-        "documentation": {}
-    },
-    {
-        "label": "Team",
-        "importPath": "teams.models",
-        "description": "teams.models",
-        "isExtraImport": true,
-        "detail": "teams.models",
-        "documentation": {}
-    },
-    {
-        "label": "Tournament",
-        "importPath": "tournaments.models",
-        "description": "tournaments.models",
-        "isExtraImport": true,
-        "detail": "tournaments.models",
-        "documentation": {}
-    },
-    {
-        "label": "User",
-        "importPath": "users.models",
-        "description": "users.models",
-        "isExtraImport": true,
-        "detail": "users.models",
-        "documentation": {}
-    },
-    {
-        "label": "User",
-        "importPath": "users.models",
-        "description": "users.models",
-        "isExtraImport": true,
-        "detail": "users.models",
-        "documentation": {}
-    },
-    {
-        "label": "User",
-        "importPath": "users.models",
-        "description": "users.models",
-        "isExtraImport": true,
-        "detail": "users.models",
-        "documentation": {}
-    },
-    {
-        "label": "User",
-        "importPath": "users.models",
-        "description": "users.models",
-        "isExtraImport": true,
-        "detail": "users.models",
-        "documentation": {}
-    },
-    {
         "label": "render",
         "importPath": "django.shortcuts",
         "description": "django.shortcuts",
@@ -544,14 +440,6 @@
         "description": "django.shortcuts",
         "isExtraImport": true,
         "detail": "django.shortcuts",
-        "documentation": {}
-    },
-    {
-        "label": "Match",
-        "importPath": "matches.models",
-        "description": "matches.models",
-        "isExtraImport": true,
-        "detail": "matches.models",
         "documentation": {}
     },
     {
@@ -859,24 +747,6 @@
         "documentation": {}
     },
     {
-        "label": "Match",
-        "kind": 6,
-        "importPath": "backend.matches.models",
-        "description": "backend.matches.models",
-        "peekOfCode": "class Match(models.Model):\n    match_id = models.AutoField(primary_key=True)\n    tournament = models.ForeignKey(Tournament, on_delete=models.CASCADE)\n    team1 = models.ForeignKey(Team, related_name='team1_matches', on_delete=models.CASCADE)\n    team2 = models.ForeignKey(Team, related_name='team2_matches', on_delete=models.CASCADE)\n    match_date = models.DateTimeField()\n    location = models.CharField(max_length=100)\n    score_team1 = models.IntegerField()\n    score_team2 = models.IntegerField()\n    created_at = models.DateTimeField(auto_now_add=True)",
-        "detail": "backend.matches.models",
-        "documentation": {}
-    },
-    {
-        "label": "MatchEvent",
-        "kind": 6,
-        "importPath": "backend.matches.models",
-        "description": "backend.matches.models",
-        "peekOfCode": "class MatchEvent(models.Model):\n    matchEvent_id = models.AutoField(primary_key=True)\n    match = models.ForeignKey(Match, on_delete=models.CASCADE)\n    event_type = models.CharField(max_length=20, choices=[\n        ('goal', 'Goal'),\n        ('yellow_card', 'Yellow Card'),\n        ('red_card', 'Red Card')\n    ])\n    player = models.ForeignKey(User, on_delete=models.CASCADE)\n    timestamp = models.DateTimeField()",
-        "detail": "backend.matches.models",
-        "documentation": {}
-    },
-    {
         "label": "Migration",
         "kind": 6,
         "importPath": "backend.notifications.migrations.0001_initial",
@@ -892,15 +762,6 @@
         "description": "backend.notifications.apps",
         "peekOfCode": "class NotificationsConfig(AppConfig):\n    default_auto_field = 'django.db.models.BigAutoField'\n    name = 'notifications'",
         "detail": "backend.notifications.apps",
-        "documentation": {}
-    },
-    {
-        "label": "Notification",
-        "kind": 6,
-        "importPath": "backend.notifications.models",
-        "description": "backend.notifications.models",
-        "peekOfCode": "class Notification(models.Model):\n    notification_id = models.AutoField(primary_key=True)\n    user = models.ForeignKey(User, on_delete=models.CASCADE)\n    message = models.CharField(max_length=255)\n    is_read = models.BooleanField(default=False)\n    created_at = models.DateTimeField(auto_now_add=True)\n    updated_at = models.DateTimeField(auto_now=True)\n    def __str__(self):\n        return f\"{self.user.username} - {self.message}\"",
-        "detail": "backend.notifications.models",
         "documentation": {}
     },
     {
@@ -922,15 +783,6 @@
         "documentation": {}
     },
     {
-        "label": "SupporterComment",
-        "kind": 6,
-        "importPath": "backend.supportercomments.models",
-        "description": "backend.supportercomments.models",
-        "peekOfCode": "class SupporterComment(models.Model):\n    supporterComment_id = models.AutoField(primary_key=True)\n    user = models.ForeignKey(User, on_delete=models.CASCADE)\n    match = models.ForeignKey(Match, on_delete=models.CASCADE)\n    comment = models.CharField(max_length=255)\n    created_at = models.DateTimeField(auto_now_add=True)\n    updated_at = models.DateTimeField(auto_now=True)\n    def __str__(self):\n        return f\"{self.user.username} - {self.match}\"",
-        "detail": "backend.supportercomments.models",
-        "documentation": {}
-    },
-    {
         "label": "Migration",
         "kind": 6,
         "importPath": "backend.teams.migrations.0001_initial",
@@ -946,24 +798,6 @@
         "description": "backend.teams.apps",
         "peekOfCode": "class TeamsConfig(AppConfig):\n    default_auto_field = 'django.db.models.BigAutoField'\n    name = 'teams'",
         "detail": "backend.teams.apps",
-        "documentation": {}
-    },
-    {
-        "label": "Team",
-        "kind": 6,
-        "importPath": "backend.teams.models",
-        "description": "backend.teams.models",
-        "peekOfCode": "class Team(models.Model):\n    team_id = models.AutoField(primary_key=True)\n    name = models.CharField(max_length=100)\n    logo = models.BinaryField(blank=True, null=True)\n    created_at = models.DateTimeField(auto_now_add=True)\n    updated_at = models.DateTimeField(auto_now=True)\n    def __str__(self):\n        return self.name\nclass TeamMember(models.Model):\n    teamMember_id = models.AutoField(primary_key=True)",
-        "detail": "backend.teams.models",
-        "documentation": {}
-    },
-    {
-        "label": "TeamMember",
-        "kind": 6,
-        "importPath": "backend.teams.models",
-        "description": "backend.teams.models",
-        "peekOfCode": "class TeamMember(models.Model):\n    teamMember_id = models.AutoField(primary_key=True)\n    team = models.ForeignKey(Team, on_delete=models.CASCADE)\n    user = models.ForeignKey(User, on_delete=models.CASCADE)\n    position = models.CharField(max_length=50)\n    created_at = models.DateTimeField(auto_now_add=True)\n    updated_at = models.DateTimeField(auto_now=True)\n    def __str__(self):\n        return f\"{self.user.username} - {self.team.name}\"",
-        "detail": "backend.teams.models",
         "documentation": {}
     },
     {
@@ -985,24 +819,6 @@
         "documentation": {}
     },
     {
-        "label": "Tournament",
-        "kind": 6,
-        "importPath": "backend.tournaments.models",
-        "description": "backend.tournaments.models",
-        "peekOfCode": "class Tournament(models.Model):\n    tournament_id = models.AutoField(primary_key=True)\n    name = models.CharField(max_length=100)\n    start_date = models.DateField()\n    end_date = models.DateField()\n    location = models.CharField(max_length=100)\n    created_at = models.DateTimeField(auto_now_add=True)\n    updated_at = models.DateTimeField(auto_now=True)\n    def __str__(self):\n        return self.name",
-        "detail": "backend.tournaments.models",
-        "documentation": {}
-    },
-    {
-        "label": "TournamentTeam",
-        "kind": 6,
-        "importPath": "backend.tournaments.models",
-        "description": "backend.tournaments.models",
-        "peekOfCode": "class TournamentTeam(models.Model):\n    tournamentTeam_id = models.AutoField(primary_key=True)\n    tournament = models.ForeignKey(Tournament, on_delete=models.CASCADE)\n    team = models.ForeignKey(Team, on_delete=models.CASCADE)\n    created_at = models.DateTimeField(auto_now_add=True)\n    updated_at = models.DateTimeField(auto_now=True)\n    def __str__(self):\n        return f\"{self.tournament.name} - {self.team.name}\"",
-        "detail": "backend.tournaments.models",
-        "documentation": {}
-    },
-    {
         "label": "Migration",
         "kind": 6,
         "importPath": "backend.users.migrations.0001_initial",
@@ -1018,15 +834,6 @@
         "description": "backend.users.apps",
         "peekOfCode": "class UsersConfig(AppConfig):\n    default_auto_field = 'django.db.models.BigAutoField'\n    name = 'users'",
         "detail": "backend.users.apps",
-        "documentation": {}
-    },
-    {
-        "label": "User",
-        "kind": 6,
-        "importPath": "backend.users.models",
-        "description": "backend.users.models",
-        "peekOfCode": "class User(models.Model):\n    user_id = models.AutoField(primary_key=True)\n    username = models.CharField(max_length=50, unique=True)\n    email = models.EmailField(unique=True)\n    password = models.CharField(max_length=255)\n    first_name = models.CharField(max_length=50, blank=True)\n    last_name = models.CharField(max_length=50, blank=True)\n    role = models.CharField(max_length=20, choices=[\n    ('player', 'Player'),\n    ('coach', 'Coach'),",
-        "detail": "backend.users.models",
         "documentation": {}
     },
     {

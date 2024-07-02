@@ -281,3 +281,5 @@ CORS_ALLOWED_ORIGINS = [
    - Utilisez un client SQL compatible pour vous connecter à la base de données Oracle en utilisant les informations de connexion fournies (host: `localhost`, port: `1521`, username: `system`, password: `welcome123`, SID: `xe`).
 
 Cette configuration permet de développer et tester efficacement votre application frontend et backend, tout en utilisant une base de données Oracle, le tout orchestré par Docker Compose pour une gestion facile et isolée des dépendances et des environnements.
+
+---
