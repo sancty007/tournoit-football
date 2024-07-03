@@ -1,4 +1,4 @@
-from rest_framework.routers import DefaultRouter
+""" from rest_framework.routers import DefaultRouter
 from .views import TeamViewSet, TeamMemberViewSet, PlayerViewSet, PlayerStatisticViewSet
 
 router = DefaultRouter()
@@ -8,3 +8,4 @@ router.register(r'players', PlayerViewSet)
 router.register(r'player-statistics', PlayerStatisticViewSet)
 
 urlpatterns = router.urls
+ """

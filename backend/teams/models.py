@@ -1,4 +1,4 @@
-from django.db import models
+""" from django.db import models
 from users.models import User
 
 class Team(models.Model):
@@ -49,3 +49,4 @@ class PlayerStatistic(models.Model):
 
     class Meta:
         db_table = 'PLAYERSTATISTICS'
+ """

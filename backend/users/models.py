@@ -1,4 +1,4 @@
-from django.db import models
+""" from django.db import models
 
 class User(models.Model):
     ROLE_CHOICES = [
@@ -31,3 +31,4 @@ class Notification(models.Model):
 
     class Meta:
         db_table = 'NOTIFICATIONS'
+ """

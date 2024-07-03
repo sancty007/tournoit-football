@@ -1,4 +1,4 @@
-from django.shortcuts import render
+""" from django.shortcuts import render
 from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticated
 
@@ -25,4 +25,4 @@ class PlayerViewSet(viewsets.ModelViewSet):
 class PlayerStatisticViewSet(viewsets.ModelViewSet):
     queryset = PlayerStatistic.objects.all()
     serializer_class = PlayerStatisticSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated] """

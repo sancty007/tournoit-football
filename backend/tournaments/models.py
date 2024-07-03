@@ -1,4 +1,5 @@
-from django.db import models
+""" from django.db import models
+from users.models import User
 from teams.models import Team, Player
 
 class Tournament(models.Model):
@@ -67,3 +68,4 @@ class SupporterComment(models.Model):
 
     class Meta:
         db_table = 'SUPPORTERCOMMENTS'
+ """

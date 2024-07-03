@@ -36,12 +36,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'rest_framework_simplejwt',
     'api',
     'corsheaders',
     # nos application de gestion de foot 
     'users',
     'tournaments',
     'teams',
+    
 ]
 
 MIDDLEWARE = [
@@ -83,7 +86,7 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # Configuration de la base de données Oracle
 
 
-DATABASES = {
+""" DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.oracle',
         'NAME': 'localhost:1521/XE',  # Nom de l'instance Oracle
@@ -95,7 +98,7 @@ DATABASES = {
     }
 }
 
-
+ """
  
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators

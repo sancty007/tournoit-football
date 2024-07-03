@@ -1,4 +1,4 @@
-from rest_framework import serializers
+""" from rest_framework import serializers
 from .models import Tournament, TournamentTeam, Match, MatchEvent, SupporterComment
 
 
@@ -26,4 +26,4 @@ class MatchEventSerializer(serializers.ModelSerializer):
 class SupporterCommentSerializer(serializers.ModelSerializer):
     class Meta:
         model = SupporterComment
-        fields = '__all__'
+        fields = '__all__' """
