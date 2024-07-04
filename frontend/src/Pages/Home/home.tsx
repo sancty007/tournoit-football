@@ -1,5 +1,5 @@
 //import { Button } from '../../components/ui/button';
-import { Button } from "../../components/ui/moving-border";
+//import { Button } from "../../components/ui/moving-border";
 import { FlipWords } from "../../components/ui/flip-words";
 import home from '/images/home.png';
 import section2 from '/images/section2.jpeg';
@@ -25,11 +25,11 @@ export const Home  =() =>{
 
                     <div className='grid grid-flow-col items-center justify-start gap-4'>
                         {/* <Button className='py-8 mx-auto'>créer un tournoi</Button> */}
-                        <Button
+                        {/* <Button
                             borderRadius="1.75rem"
                             className="bg-white dark:bg-slate-900 text-black dark:text-white border-neutral-200 dark:border-slate-800 ">
                             créer un tournoit
-                        </Button>
+                        </Button> */}
                         <div>
                             lorem ipsum
                         </div>

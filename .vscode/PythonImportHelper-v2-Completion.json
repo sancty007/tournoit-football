@@ -16,102 +16,6 @@
         "documentation": {}
     },
     {
-        "label": "admin",
-        "importPath": "django.contrib",
-        "description": "django.contrib",
-        "isExtraImport": true,
-        "detail": "django.contrib",
-        "documentation": {}
-    },
-    {
-        "label": "admin",
-        "importPath": "django.contrib",
-        "description": "django.contrib",
-        "isExtraImport": true,
-        "detail": "django.contrib",
-        "documentation": {}
-    },
-    {
-        "label": "admin",
-        "importPath": "django.contrib",
-        "description": "django.contrib",
-        "isExtraImport": true,
-        "detail": "django.contrib",
-        "documentation": {}
-    },
-    {
-        "label": "admin",
-        "importPath": "django.contrib",
-        "description": "django.contrib",
-        "isExtraImport": true,
-        "detail": "django.contrib",
-        "documentation": {}
-    },
-    {
-        "label": "admin",
-        "importPath": "django.contrib",
-        "description": "django.contrib",
-        "isExtraImport": true,
-        "detail": "django.contrib",
-        "documentation": {}
-    },
-    {
-        "label": "admin",
-        "importPath": "django.contrib",
-        "description": "django.contrib",
-        "isExtraImport": true,
-        "detail": "django.contrib",
-        "documentation": {}
-    },
-    {
-        "label": "AppConfig",
-        "importPath": "django.apps",
-        "description": "django.apps",
-        "isExtraImport": true,
-        "detail": "django.apps",
-        "documentation": {}
-    },
-    {
-        "label": "AppConfig",
-        "importPath": "django.apps",
-        "description": "django.apps",
-        "isExtraImport": true,
-        "detail": "django.apps",
-        "documentation": {}
-    },
-    {
-        "label": "AppConfig",
-        "importPath": "django.apps",
-        "description": "django.apps",
-        "isExtraImport": true,
-        "detail": "django.apps",
-        "documentation": {}
-    },
-    {
-        "label": "AppConfig",
-        "importPath": "django.apps",
-        "description": "django.apps",
-        "isExtraImport": true,
-        "detail": "django.apps",
-        "documentation": {}
-    },
-    {
-        "label": "AppConfig",
-        "importPath": "django.apps",
-        "description": "django.apps",
-        "isExtraImport": true,
-        "detail": "django.apps",
-        "documentation": {}
-    },
-    {
-        "label": "AppConfig",
-        "importPath": "django.apps",
-        "description": "django.apps",
-        "isExtraImport": true,
-        "detail": "django.apps",
-        "documentation": {}
-    },
-    {
         "label": "AppConfig",
         "importPath": "django.apps",
         "description": "django.apps",
@@ -136,179 +40,11 @@
         "documentation": {}
     },
     {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
         "label": "TestCase",
         "importPath": "django.test",
         "description": "django.test",
         "isExtraImport": true,
         "detail": "django.test",
-        "documentation": {}
-    },
-    {
-        "label": "TestCase",
-        "importPath": "django.test",
-        "description": "django.test",
-        "isExtraImport": true,
-        "detail": "django.test",
-        "documentation": {}
-    },
-    {
-        "label": "TestCase",
-        "importPath": "django.test",
-        "description": "django.test",
-        "isExtraImport": true,
-        "detail": "django.test",
-        "documentation": {}
-    },
-    {
-        "label": "TestCase",
-        "importPath": "django.test",
-        "description": "django.test",
-        "isExtraImport": true,
-        "detail": "django.test",
-        "documentation": {}
-    },
-    {
-        "label": "TestCase",
-        "importPath": "django.test",
-        "description": "django.test",
-        "isExtraImport": true,
-        "detail": "django.test",
-        "documentation": {}
-    },
-    {
-        "label": "TestCase",
-        "importPath": "django.test",
-        "description": "django.test",
-        "isExtraImport": true,
-        "detail": "django.test",
-        "documentation": {}
-    },
-    {
-        "label": "TestCase",
-        "importPath": "django.test",
-        "description": "django.test",
-        "isExtraImport": true,
-        "detail": "django.test",
-        "documentation": {}
-    },
-    {
-        "label": "path",
-        "importPath": "django.urls",
-        "description": "django.urls",
-        "isExtraImport": true,
-        "detail": "django.urls",
         "documentation": {}
     },
     {
@@ -321,6 +57,14 @@
     },
     {
         "label": "include",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "path",
         "importPath": "django.urls",
         "description": "django.urls",
         "isExtraImport": true,
@@ -383,63 +127,6 @@
         "description": "django.core.wsgi",
         "isExtraImport": true,
         "detail": "django.core.wsgi",
-        "documentation": {}
-    },
-    {
-        "label": "django.db.models.deletion",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "django.db.models.deletion",
-        "description": "django.db.models.deletion",
-        "detail": "django.db.models.deletion",
-        "documentation": {}
-    },
-    {
-        "label": "render",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
-        "isExtraImport": true,
-        "detail": "django.shortcuts",
-        "documentation": {}
-    },
-    {
-        "label": "render",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
-        "isExtraImport": true,
-        "detail": "django.shortcuts",
-        "documentation": {}
-    },
-    {
-        "label": "render",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
-        "isExtraImport": true,
-        "detail": "django.shortcuts",
-        "documentation": {}
-    },
-    {
-        "label": "render",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
-        "isExtraImport": true,
-        "detail": "django.shortcuts",
-        "documentation": {}
-    },
-    {
-        "label": "render",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
-        "isExtraImport": true,
-        "detail": "django.shortcuts",
-        "documentation": {}
-    },
-    {
-        "label": "render",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
-        "isExtraImport": true,
-        "detail": "django.shortcuts",
         "documentation": {}
     },
     {
@@ -562,7 +249,7 @@
         "kind": 5,
         "importPath": "backend.backend.settings",
         "description": "backend.backend.settings",
-        "peekOfCode": "ALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'api',",
+        "peekOfCode": "ALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'rest_framework',",
         "detail": "backend.backend.settings",
         "documentation": {}
     },
@@ -571,7 +258,7 @@
         "kind": 5,
         "importPath": "backend.backend.settings",
         "description": "backend.backend.settings",
-        "peekOfCode": "INSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'api',\n    'corsheaders',\n    # nos application de gestion de foot ",
+        "peekOfCode": "INSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'rest_framework',\n    'rest_framework_simplejwt',\n    'api',",
         "detail": "backend.backend.settings",
         "documentation": {}
     },
@@ -607,7 +294,7 @@
         "kind": 5,
         "importPath": "backend.backend.settings",
         "description": "backend.backend.settings",
-        "peekOfCode": "WSGI_APPLICATION = 'backend.wsgi.application'\n# Database\n# https://docs.djangoproject.com/en/5.0/ref/settings/#databases\n# Configuration de la base de données Oracle\nDATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.oracle',\n        'NAME': 'localhost:1521/XE',  # Nom de l'instance Oracle\n        'USER': 'admin_user',         # Utilisateur Oracle\n        'PASSWORD': 'admin_user',     # Mot de passe de l'utilisateur",
+        "peekOfCode": "WSGI_APPLICATION = 'backend.wsgi.application'\n# Database\n# https://docs.djangoproject.com/en/5.0/ref/settings/#databases\n# Configuration de la base de données Oracle\nDATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.oracle',\n        'NAME': 'localhost:1521/XE',  # Nom de l'instance Oracle\n        'USER': 'C##admin_user_oracle',         # Utilisateur Oracle\n        'PASSWORD': 'admin_user_oracle',     # Mot de passe de l'utilisateur",
         "detail": "backend.backend.settings",
         "documentation": {}
     },
@@ -616,7 +303,7 @@
         "kind": 5,
         "importPath": "backend.backend.settings",
         "description": "backend.backend.settings",
-        "peekOfCode": "DATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.oracle',\n        'NAME': 'localhost:1521/XE',  # Nom de l'instance Oracle\n        'USER': 'admin_user',         # Utilisateur Oracle\n        'PASSWORD': 'admin_user',     # Mot de passe de l'utilisateur\n        'HOST': '',                   # Laissez vide pour une connexion locale\n        'PORT': '',                   # Laissez vide pour utiliser le port par défaut\n        # Ne spécifiez pas 'OPTIONS' pour utiliser le mode par défaut\n    }",
+        "peekOfCode": "DATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.oracle',\n        'NAME': 'localhost:1521/XE',  # Nom de l'instance Oracle\n        'USER': 'C##admin_user_oracle',         # Utilisateur Oracle\n        'PASSWORD': 'admin_user_oracle',     # Mot de passe de l'utilisateur\n        'HOST': '',                   # Laissez vide pour une connexion locale\n        'PORT': '',                   # Laissez vide pour utiliser le port par défaut\n        # Ne spécifiez pas 'OPTIONS' pour utiliser le mode par défaut\n    }",
         "detail": "backend.backend.settings",
         "documentation": {}
     },
@@ -717,123 +404,6 @@
         "description": "backend.backend.wsgi",
         "peekOfCode": "application = get_wsgi_application()",
         "detail": "backend.backend.wsgi",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "backend.matches.migrations.0001_initial",
-        "description": "backend.matches.migrations.0001_initial",
-        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        ('users', '0001_initial'),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Match',\n            fields=[\n                ('match_id', models.AutoField(primary_key=True, serialize=False)),",
-        "detail": "backend.matches.migrations.0001_initial",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "backend.matches.migrations.0002_initial",
-        "description": "backend.matches.migrations.0002_initial",
-        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        ('tournaments', '0001_initial'),\n        ('teams', '0001_initial'),\n        ('matches', '0001_initial'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='match',",
-        "detail": "backend.matches.migrations.0002_initial",
-        "documentation": {}
-    },
-    {
-        "label": "MatchesConfig",
-        "kind": 6,
-        "importPath": "backend.matches.apps",
-        "description": "backend.matches.apps",
-        "peekOfCode": "class MatchesConfig(AppConfig):\n    default_auto_field = 'django.db.models.BigAutoField'\n    name = 'matches'",
-        "detail": "backend.matches.apps",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "backend.notifications.migrations.0001_initial",
-        "description": "backend.notifications.migrations.0001_initial",
-        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        ('users', '0001_initial'),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Notification',\n            fields=[\n                ('notification_id', models.AutoField(primary_key=True, serialize=False)),",
-        "detail": "backend.notifications.migrations.0001_initial",
-        "documentation": {}
-    },
-    {
-        "label": "NotificationsConfig",
-        "kind": 6,
-        "importPath": "backend.notifications.apps",
-        "description": "backend.notifications.apps",
-        "peekOfCode": "class NotificationsConfig(AppConfig):\n    default_auto_field = 'django.db.models.BigAutoField'\n    name = 'notifications'",
-        "detail": "backend.notifications.apps",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "backend.supportercomments.migrations.0001_initial",
-        "description": "backend.supportercomments.migrations.0001_initial",
-        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        ('users', '0001_initial'),\n        ('matches', '0001_initial'),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='SupporterComment',\n            fields=[",
-        "detail": "backend.supportercomments.migrations.0001_initial",
-        "documentation": {}
-    },
-    {
-        "label": "SupportercommentsConfig",
-        "kind": 6,
-        "importPath": "backend.supportercomments.apps",
-        "description": "backend.supportercomments.apps",
-        "peekOfCode": "class SupportercommentsConfig(AppConfig):\n    default_auto_field = 'django.db.models.BigAutoField'\n    name = 'supportercomments'",
-        "detail": "backend.supportercomments.apps",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "backend.teams.migrations.0001_initial",
-        "description": "backend.teams.migrations.0001_initial",
-        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        ('users', '0001_initial'),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Team',\n            fields=[\n                ('team_id', models.AutoField(primary_key=True, serialize=False)),",
-        "detail": "backend.teams.migrations.0001_initial",
-        "documentation": {}
-    },
-    {
-        "label": "TeamsConfig",
-        "kind": 6,
-        "importPath": "backend.teams.apps",
-        "description": "backend.teams.apps",
-        "peekOfCode": "class TeamsConfig(AppConfig):\n    default_auto_field = 'django.db.models.BigAutoField'\n    name = 'teams'",
-        "detail": "backend.teams.apps",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "backend.tournaments.migrations.0001_initial",
-        "description": "backend.tournaments.migrations.0001_initial",
-        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        ('teams', '0001_initial'),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Tournament',\n            fields=[\n                ('tournament_id', models.AutoField(primary_key=True, serialize=False)),",
-        "detail": "backend.tournaments.migrations.0001_initial",
-        "documentation": {}
-    },
-    {
-        "label": "TournamentsConfig",
-        "kind": 6,
-        "importPath": "backend.tournaments.apps",
-        "description": "backend.tournaments.apps",
-        "peekOfCode": "class TournamentsConfig(AppConfig):\n    default_auto_field = 'django.db.models.BigAutoField'\n    name = 'tournaments'",
-        "detail": "backend.tournaments.apps",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "backend.users.migrations.0001_initial",
-        "description": "backend.users.migrations.0001_initial",
-        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='User',\n            fields=[\n                ('user_id', models.AutoField(primary_key=True, serialize=False)),\n                ('username', models.CharField(max_length=50, unique=True)),",
-        "detail": "backend.users.migrations.0001_initial",
-        "documentation": {}
-    },
-    {
-        "label": "UsersConfig",
-        "kind": 6,
-        "importPath": "backend.users.apps",
-        "description": "backend.users.apps",
-        "peekOfCode": "class UsersConfig(AppConfig):\n    default_auto_field = 'django.db.models.BigAutoField'\n    name = 'users'",
-        "detail": "backend.users.apps",
         "documentation": {}
     },
     {
