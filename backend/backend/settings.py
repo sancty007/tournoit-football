@@ -41,9 +41,7 @@ INSTALLED_APPS = [
     'api',
     'corsheaders',
     # nos application de gestion de foot 
-    'users',
-    'tournaments',
-    'teams',
+ 
     
 ]
 
@@ -86,19 +84,18 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # Configuration de la base de données Oracle
 
 
-""" DATABASES = {
+DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.oracle',
         'NAME': 'localhost:1521/XE',  # Nom de l'instance Oracle
-        'USER': 'admin_user',         # Utilisateur Oracle
-        'PASSWORD': 'admin_user',     # Mot de passe de l'utilisateur
+        'USER': 'C##admin_user_oracle',         # Utilisateur Oracle
+        'PASSWORD': 'admin_user_oracle',     # Mot de passe de l'utilisateur
         'HOST': '',                   # Laissez vide pour une connexion locale
         'PORT': '',                   # Laissez vide pour utiliser le port par défaut
         # Ne spécifiez pas 'OPTIONS' pour utiliser le mode par défaut
     }
 }
 
- """
  
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
