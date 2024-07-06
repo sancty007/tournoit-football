@@ -41,8 +41,11 @@ INSTALLED_APPS = [
     'api',
     'corsheaders',
     # nos application de gestion de foot 
- 
-    
+    'users_t',
+    'teams',
+    'tournaments',
+    'comments',
+    'notifications',
 ]
 
 MIDDLEWARE = [
@@ -88,8 +91,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.oracle',
         'NAME': 'localhost:1521/XE',  # Nom de l'instance Oracle
-        'USER': 'C##admin_user_oracle',         # Utilisateur Oracle
-        'PASSWORD': 'admin_user_oracle',     # Mot de passe de l'utilisateur
+        'USER': 'C##admin_user',         # Utilisateur Oracle
+        'PASSWORD': 'admin_user',     # Mot de passe de l'utilisateur
         'HOST': '',                   # Laissez vide pour une connexion locale
         'PORT': '',                   # Laissez vide pour utiliser le port par défaut
         # Ne spécifiez pas 'OPTIONS' pour utiliser le mode par défaut
