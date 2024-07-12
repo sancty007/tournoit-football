@@ -1,14 +1,16 @@
 import './App.css'
+
 import { Home } from './Pages/Home/home'
-import { Footer } from './components/Footer'
-import {Header} from "./components/Header"
+// import { Footer } from './components/Footer'
+// import {Header} from "./components/Header"
 
 function App() {
   return(
     <>
-    <Header />
+    {/* <Header /> */}
     <Home />
-    <Footer />
+    
+    {/* <Footer /> */}
     </>
   )
 }
