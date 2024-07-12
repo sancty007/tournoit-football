@@ -2,6 +2,8 @@
 
 import axios from 'axios';
 import { useState } from 'react';
+import { Card } from '../../components/ui/card';
+import { Button } from '../../components/ui/button';
 
 export const CreateTeam = ({ tournamentId }) => {
     const [name, setName] = useState('');
@@ -28,8 +30,8 @@ export const CreateTeam = ({ tournamentId }) => {
     };
 
     return (
-        <div className="min-h-screen bg-gray-100 p-4 flex justify-center items-center">
-            <form onSubmit={handleSubmit} className="bg-white p-8 rounded shadow-md w-96">
+        <Card className="min-h-screen p-4 flex justify-center items-center">
+            <form onSubmit={handleSubmit} className="p-8 rounded shadow-md w-96">
                 <h2 className="text-2xl font-bold mb-6 text-center">Create New Team</h2>
                 {success && <p className="text-green-500 mb-4">{success}</p>}
                 {error && <p className="text-red-500 mb-4">{error}</p>}
@@ -44,14 +46,14 @@ export const CreateTeam = ({ tournamentId }) => {
                         required
                     />
                 </div>
-                <button
+                <Button
                     type="submit"
-                    className="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600"
+                    className="w-full p-2 rounded"
                 >
                     Create
-                </button>
+                </Button>
             </form>
-        </div>
+        </Card>
     );
 };
 
