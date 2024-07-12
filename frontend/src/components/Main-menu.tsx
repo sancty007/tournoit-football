@@ -1,7 +1,8 @@
 
 import { AlignLeft} from "lucide-react";
 import { useMediaQuery } from "../hooks/use-media-query";
-import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "./ui/sheet";
+import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTrigger } from "./ui/sheet";
+import { Link } from "react-router-dom";
 
 
 
@@ -20,10 +21,16 @@ export default function MainMenu() {
                 </SheetTrigger>
                 <SheetContent>
                     <SheetHeader>
-                        <SheetTitle>Are you absolutely sure?</SheetTitle>
                         <SheetDescription>
-                            This action cannot be undone. This will permanently delete your account
-                            and remove your data from our servers.
+                            <div  className="">
+                                <ul className="grid grid-cols-1 space-y-4">
+                                    <li><Link to="/">HOME</Link></li>
+                                    <li><Link to="/calendrier">CALENDRIER</Link></li>
+                                    <li><Link to="/groups">GROUPS</Link></li>
+                                    <li><Link to="/equipes">EQUIPES</Link></li>
+                                    <li><Link to="/contact">CONTACT</Link></li>
+                                </ul>
+                            </div>.
                         </SheetDescription>
                     </SheetHeader>
             </SheetContent>

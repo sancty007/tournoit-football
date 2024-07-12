@@ -78,4 +78,10 @@
     .header{
       @apply fixed top-0 left-0 w-full p-7 border-b z-50 md:block hidden bg-background/90 backdrop-blur-sm ;
     }
+    .userdashboard{
+      @apply min-h-screen bg-background/90 p-4 ;
+    }
+    .userdashboardCard{
+      @apply bg-background/90 p-6 rounded-lg shadow-md ;
+    }
   }

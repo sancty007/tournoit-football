@@ -16,6 +16,22 @@
         "documentation": {}
     },
     {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
+        "documentation": {}
+    },
+    {
         "label": "AppConfig",
         "importPath": "django.apps",
         "description": "django.apps",
@@ -37,6 +53,54 @@
         "description": "django.db",
         "isExtraImport": true,
         "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
         "documentation": {}
     },
     {
@@ -65,6 +129,22 @@
     },
     {
         "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "include",
         "importPath": "django.urls",
         "description": "django.urls",
         "isExtraImport": true,
@@ -130,6 +210,97 @@
         "documentation": {}
     },
     {
+        "label": "django.contrib.auth.models",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "AbstractUser",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "django.contrib.auth.validators",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "django.contrib.auth.validators",
+        "description": "django.contrib.auth.validators",
+        "detail": "django.contrib.auth.validators",
+        "documentation": {}
+    },
+    {
+        "label": "django.utils.timezone",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "django.utils.timezone",
+        "description": "django.utils.timezone",
+        "detail": "django.utils.timezone",
+        "documentation": {}
+    },
+    {
+        "label": "UserAdmin",
+        "importPath": "django.contrib.auth.admin",
+        "description": "django.contrib.auth.admin",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.admin",
+        "documentation": {}
+    },
+    {
+        "label": "serializers",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "viewsets",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "DefaultRouter",
+        "importPath": "rest_framework.routers",
+        "description": "rest_framework.routers",
+        "isExtraImport": true,
+        "detail": "rest_framework.routers",
+        "documentation": {}
+    },
+    {
+        "label": "CustomUserViewSet",
+        "importPath": "users.views",
+        "description": "users.views",
+        "isExtraImport": true,
+        "detail": "users.views",
+        "documentation": {}
+    },
+    {
+        "label": "IsAuthenticatedOrReadOnly",
+        "importPath": "rest_framework.permissions",
+        "description": "rest_framework.permissions",
+        "isExtraImport": true,
+        "detail": "rest_framework.permissions",
+        "documentation": {}
+    },
+    {
+        "label": "AllowAny",
+        "importPath": "rest_framework.permissions",
+        "description": "rest_framework.permissions",
+        "isExtraImport": true,
+        "detail": "rest_framework.permissions",
+        "documentation": {}
+    },
+    {
         "label": "sys",
         "kind": 6,
         "isExtraImport": true,
@@ -177,7 +348,7 @@
         "kind": 5,
         "importPath": "backend.api.urls",
         "description": "backend.api.urls",
-        "peekOfCode": "urlpatterns = [\n    path('tasks/', views.tasks_list, name='tasks_list'),\n    path('test_connection/', views.test_connection),\n    path('list_schemas/', views.list_schemas),\n    # ... autres chemins d'URL\n]",
+        "peekOfCode": "urlpatterns = [\n    path('tasks/', views.tasks_list, name='tasks_list'),\n    path('test_connection/', views.test_connection),\n    # ... autres chemins d'URL\n]",
         "detail": "backend.api.urls",
         "documentation": {}
     },
@@ -195,16 +366,7 @@
         "kind": 2,
         "importPath": "backend.api.views",
         "description": "backend.api.views",
-        "peekOfCode": "def test_connection(request):\n    try:\n        with connection.cursor() as cursor:\n            cursor.execute(\"SELECT 1 FROM dual\")\n            result = cursor.fetchone()\n        return HttpResponse(f\"Connexion réussie: {result}\")\n    except Exception as e:\n        return HttpResponse(f\"Erreur de connexion : {e}\")\ndef list_schemas(request):\n    try:",
-        "detail": "backend.api.views",
-        "documentation": {}
-    },
-    {
-        "label": "list_schemas",
-        "kind": 2,
-        "importPath": "backend.api.views",
-        "description": "backend.api.views",
-        "peekOfCode": "def list_schemas(request):\n    try:\n        with connection.cursor() as cursor:\n            # Exécuter la requête SQL pour récupérer les noms d'utilisateur (schémas)\n            cursor.execute(\"select * from tab\")\n            # Récupérer tous les résultats\n            schemas = cursor.fetchall()\n        # Formater les résultats pour l'affichage\n        schema_list = \"<ul>\"\n        for schema in schemas:",
+        "peekOfCode": "def test_connection(request):\n    try:\n        with connection.cursor() as cursor:\n            cursor.execute(\"SELECT 1 FROM dual\")\n            result = cursor.fetchone()\n        return HttpResponse(f\"Connexion réussie: {result}\")\n    except Exception as e:\n        return HttpResponse(f\"Erreur de connexion : {e}\")",
         "detail": "backend.api.views",
         "documentation": {}
     },
@@ -249,7 +411,7 @@
         "kind": 5,
         "importPath": "backend.backend.settings",
         "description": "backend.backend.settings",
-        "peekOfCode": "ALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'rest_framework',",
+        "peekOfCode": "ALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    #application de gestion des requetes",
         "detail": "backend.backend.settings",
         "documentation": {}
     },
@@ -258,7 +420,7 @@
         "kind": 5,
         "importPath": "backend.backend.settings",
         "description": "backend.backend.settings",
-        "peekOfCode": "INSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'rest_framework',\n    'rest_framework_simplejwt',\n    'api',",
+        "peekOfCode": "INSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    #application de gestion des requetes\n    'rest_framework',\n    'rest_framework_simplejwt',",
         "detail": "backend.backend.settings",
         "documentation": {}
     },
@@ -267,7 +429,7 @@
         "kind": 5,
         "importPath": "backend.backend.settings",
         "description": "backend.backend.settings",
-        "peekOfCode": "MIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',\n    'django.contrib.sessions.middleware.SessionMiddleware',\n    'django.middleware.common.CommonMiddleware',\n    'django.middleware.csrf.CsrfViewMiddleware',\n    'django.contrib.auth.middleware.AuthenticationMiddleware',\n    'django.contrib.messages.middleware.MessageMiddleware',\n    'django.middleware.clickjacking.XFrameOptionsMiddleware',\n    'corsheaders.middleware.CorsMiddleware',\n    'django.middleware.common.CommonMiddleware',",
+        "peekOfCode": "MIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',\n    'django.contrib.sessions.middleware.SessionMiddleware',\n    'django.middleware.common.CommonMiddleware',\n    'django.middleware.csrf.CsrfViewMiddleware',\n    'django.contrib.auth.middleware.AuthenticationMiddleware',\n    'django.contrib.messages.middleware.MessageMiddleware',\n    'django.middleware.clickjacking.XFrameOptionsMiddleware',\n    # connection des requetes entre front et back\n    'corsheaders.middleware.CorsMiddleware',",
         "detail": "backend.backend.settings",
         "documentation": {}
     },
@@ -294,7 +456,7 @@
         "kind": 5,
         "importPath": "backend.backend.settings",
         "description": "backend.backend.settings",
-        "peekOfCode": "WSGI_APPLICATION = 'backend.wsgi.application'\n# Database\n# https://docs.djangoproject.com/en/5.0/ref/settings/#databases\n# Configuration de la base de données Oracle\nDATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.oracle',\n        'NAME': 'localhost:1521/XE',  # Nom de l'instance Oracle\n        'USER': 'C##admin_user_oracle',         # Utilisateur Oracle\n        'PASSWORD': 'admin_user_oracle',     # Mot de passe de l'utilisateur",
+        "peekOfCode": "WSGI_APPLICATION = 'backend.wsgi.application'\n# Database\n# https://docs.djangoproject.com/en/5.0/ref/settings/#databases\n# configuration de la base de données oracle\nDATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.oracle',\n        'NAME': 'localhost:1521/XEPDB1',  # Nom de l'instance Oracle\n        'USER': 'C##admin_user',         # Utilisateur Oracle\n        'PASSWORD': 'admin_user',     # Mot de passe de l'utilisateur",
         "detail": "backend.backend.settings",
         "documentation": {}
     },
@@ -303,7 +465,7 @@
         "kind": 5,
         "importPath": "backend.backend.settings",
         "description": "backend.backend.settings",
-        "peekOfCode": "DATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.oracle',\n        'NAME': 'localhost:1521/XE',  # Nom de l'instance Oracle\n        'USER': 'C##admin_user_oracle',         # Utilisateur Oracle\n        'PASSWORD': 'admin_user_oracle',     # Mot de passe de l'utilisateur\n        'HOST': '',                   # Laissez vide pour une connexion locale\n        'PORT': '',                   # Laissez vide pour utiliser le port par défaut\n        # Ne spécifiez pas 'OPTIONS' pour utiliser le mode par défaut\n    }",
+        "peekOfCode": "DATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.oracle',\n        'NAME': 'localhost:1521/XEPDB1',  # Nom de l'instance Oracle\n        'USER': 'C##admin_user',         # Utilisateur Oracle\n        'PASSWORD': 'admin_user',     # Mot de passe de l'utilisateur\n        'HOST': '',                   # Laissez vide pour une connexion locale\n        'PORT': '',                   # Laissez vide pour utiliser le port par défaut\n        # Ne spécifiez pas 'OPTIONS' pour utiliser le mode par défaut\n    }",
         "detail": "backend.backend.settings",
         "documentation": {}
     },
@@ -330,7 +492,7 @@
         "kind": 5,
         "importPath": "backend.backend.settings",
         "description": "backend.backend.settings",
-        "peekOfCode": "TIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.0/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nCORS_ALLOWED_ORIGINS = [",
+        "peekOfCode": "TIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.0/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\n# configuration de l'url de la partie front ",
         "detail": "backend.backend.settings",
         "documentation": {}
     },
@@ -339,7 +501,7 @@
         "kind": 5,
         "importPath": "backend.backend.settings",
         "description": "backend.backend.settings",
-        "peekOfCode": "USE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.0/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nCORS_ALLOWED_ORIGINS = [\n    \"http://localhost:5173\",",
+        "peekOfCode": "USE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.0/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\n# configuration de l'url de la partie front \nCORS_ALLOWED_ORIGINS = [",
         "detail": "backend.backend.settings",
         "documentation": {}
     },
@@ -348,7 +510,7 @@
         "kind": 5,
         "importPath": "backend.backend.settings",
         "description": "backend.backend.settings",
-        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.0/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nCORS_ALLOWED_ORIGINS = [\n    \"http://localhost:5173\",\n    \"http://frontend:5173\",",
+        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.0/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\n# configuration de l'url de la partie front \nCORS_ALLOWED_ORIGINS = [\n   \"http://localhost:5173\",",
         "detail": "backend.backend.settings",
         "documentation": {}
     },
@@ -357,7 +519,7 @@
         "kind": 5,
         "importPath": "backend.backend.settings",
         "description": "backend.backend.settings",
-        "peekOfCode": "STATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nCORS_ALLOWED_ORIGINS = [\n    \"http://localhost:5173\",\n    \"http://frontend:5173\",\n]\nLOGGING = {\n    'version': 1,",
+        "peekOfCode": "STATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\n# configuration de l'url de la partie front \nCORS_ALLOWED_ORIGINS = [\n   \"http://localhost:5173\",\n]\nLOGGING = {\n    'version': 1,",
         "detail": "backend.backend.settings",
         "documentation": {}
     },
@@ -366,7 +528,7 @@
         "kind": 5,
         "importPath": "backend.backend.settings",
         "description": "backend.backend.settings",
-        "peekOfCode": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nCORS_ALLOWED_ORIGINS = [\n    \"http://localhost:5173\",\n    \"http://frontend:5173\",\n]\nLOGGING = {\n    'version': 1,\n    'handlers': {\n        'console': {\n            'level': 'DEBUG',",
+        "peekOfCode": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\n# configuration de l'url de la partie front \nCORS_ALLOWED_ORIGINS = [\n   \"http://localhost:5173\",\n]\nLOGGING = {\n    'version': 1,\n    'handlers': {\n        'console': {\n            'level': 'DEBUG',",
         "detail": "backend.backend.settings",
         "documentation": {}
     },
@@ -375,7 +537,7 @@
         "kind": 5,
         "importPath": "backend.backend.settings",
         "description": "backend.backend.settings",
-        "peekOfCode": "CORS_ALLOWED_ORIGINS = [\n    \"http://localhost:5173\",\n    \"http://frontend:5173\",\n]\nLOGGING = {\n    'version': 1,\n    'handlers': {\n        'console': {\n            'level': 'DEBUG',\n            'class': 'logging.StreamHandler',",
+        "peekOfCode": "CORS_ALLOWED_ORIGINS = [\n   \"http://localhost:5173\",\n]\nLOGGING = {\n    'version': 1,\n    'handlers': {\n        'console': {\n            'level': 'DEBUG',\n            'class': 'logging.StreamHandler',\n        },",
         "detail": "backend.backend.settings",
         "documentation": {}
     },
@@ -389,11 +551,20 @@
         "documentation": {}
     },
     {
+        "label": "REST_FRAMEWORK",
+        "kind": 5,
+        "importPath": "backend.backend.settings",
+        "description": "backend.backend.settings",
+        "peekOfCode": "REST_FRAMEWORK = {\n    'DEFAULT_PERMISSION_CLASSES': [\n        'rest_framework.permissions.AllowAny',  # Permet à tout le monde d'accéder aux vues\n    ]\n}",
+        "detail": "backend.backend.settings",
+        "documentation": {}
+    },
+    {
         "label": "urlpatterns",
         "kind": 5,
         "importPath": "backend.backend.urls",
         "description": "backend.backend.urls",
-        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('api/', include('api.urls')),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('api/', include('api.urls')),\n    path('users/', include('users.urls')),\n]\n#  path('users_t/', include('users_t.urls')),\n\"\"\"  path('teams/', include('teams.urls')),\n    path('tournaments/', include('tournaments.urls')),\n    path('notifications/', include('notifications.urls')),\n    path('comments/', include('comments.urls')), \"\"\"",
         "detail": "backend.backend.urls",
         "documentation": {}
     },
@@ -404,6 +575,87 @@
         "description": "backend.backend.wsgi",
         "peekOfCode": "application = get_wsgi_application()",
         "detail": "backend.backend.wsgi",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "backend.users.migrations.0001_initial",
+        "description": "backend.users.migrations.0001_initial",
+        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        ('auth', '0012_alter_user_first_name_max_length'),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='CustomUser',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),",
+        "detail": "backend.users.migrations.0001_initial",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "backend.users.migrations.0002_alter_customuser_role",
+        "description": "backend.users.migrations.0002_alter_customuser_role",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('users', '0001_initial'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='customuser',\n            name='role',\n            field=models.CharField(choices=[('admin', 'Admin'), ('player', 'Player'), ('coach', 'Coach'), ('supporter', 'Supporter'), ('user', 'User')], max_length=20),\n        ),",
+        "detail": "backend.users.migrations.0002_alter_customuser_role",
+        "documentation": {}
+    },
+    {
+        "label": "CustomUserAdmin",
+        "kind": 6,
+        "importPath": "backend.users.admin",
+        "description": "backend.users.admin",
+        "peekOfCode": "class CustomUserAdmin(UserAdmin):\n    model = CustomUser\n    list_display = ('username', 'email', 'role', 'is_staff', 'is_active')\n    list_filter = ('role', 'is_staff', 'is_active')\n    fieldsets = (\n        (None, {'fields': ('username', 'password')}),\n        ('Personal info', {'fields': ('first_name', 'last_name', 'email', 'role')}),\n        ('Permissions', {'fields': ('is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions')}),\n        ('Important dates', {'fields': ('last_login', 'date_joined')}),\n    )",
+        "detail": "backend.users.admin",
+        "documentation": {}
+    },
+    {
+        "label": "UsersConfig",
+        "kind": 6,
+        "importPath": "backend.users.apps",
+        "description": "backend.users.apps",
+        "peekOfCode": "class UsersConfig(AppConfig):\n    default_auto_field = 'django.db.models.BigAutoField'\n    name = 'users'",
+        "detail": "backend.users.apps",
+        "documentation": {}
+    },
+    {
+        "label": "CustomUser",
+        "kind": 6,
+        "importPath": "backend.users.models",
+        "description": "backend.users.models",
+        "peekOfCode": "class CustomUser(AbstractUser):\n    ROLE_CHOICES = (\n        ('admin', 'Admin'),\n        ('player', 'Player'),\n        ('coach', 'Coach'),\n        ('supporter', 'Supporter'),\n        ('user', 'User')\n    )\n    role = models.CharField(max_length=20, choices=ROLE_CHOICES)\n    groups = models.ManyToManyField(",
+        "detail": "backend.users.models",
+        "documentation": {}
+    },
+    {
+        "label": "CustomUserSerializer",
+        "kind": 6,
+        "importPath": "backend.users.serializers",
+        "description": "backend.users.serializers",
+        "peekOfCode": "class CustomUserSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = CustomUser\n        fields = ['id', 'username', 'email', 'role', 'first_name', 'last_name']",
+        "detail": "backend.users.serializers",
+        "documentation": {}
+    },
+    {
+        "label": "router",
+        "kind": 5,
+        "importPath": "backend.users.urls",
+        "description": "backend.users.urls",
+        "peekOfCode": "router = DefaultRouter()\nrouter.register(r'users', CustomUserViewSet)\nurlpatterns = [\n    path('', include(router.urls)),\n    # Autres URLs de votre application\n]",
+        "detail": "backend.users.urls",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "backend.users.urls",
+        "description": "backend.users.urls",
+        "peekOfCode": "urlpatterns = [\n    path('', include(router.urls)),\n    # Autres URLs de votre application\n]",
+        "detail": "backend.users.urls",
+        "documentation": {}
+    },
+    {
+        "label": "CustomUserViewSet",
+        "kind": 6,
+        "importPath": "backend.users.views",
+        "description": "backend.users.views",
+        "peekOfCode": "class CustomUserViewSet(viewsets.ModelViewSet):\n    queryset = CustomUser.objects.all()\n    serializer_class = CustomUserSerializer\n    permission_classes = [IsAuthenticatedOrReadOnly]\n    def get_permissions(self):\n        if self.action == 'create':\n            return [AllowAny()]\n        return super().get_permissions()",
+        "detail": "backend.users.views",
         "documentation": {}
     },
     {

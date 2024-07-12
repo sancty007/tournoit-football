@@ -36,17 +36,18 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
+    #application de gestion des requetes
     'rest_framework',
     'rest_framework_simplejwt',
     'api',
     'corsheaders',
     # nos application de gestion de foot 
-    'users_t',
-    'teams',
-    'tournaments',
-    'comments',
-    'notifications',
+    'users',
+ 
 ]
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -56,8 +57,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    # connection des requetes entre front et back
     'corsheaders.middleware.CorsMiddleware',
-    'django.middleware.common.CommonMiddleware',
 ]
 
 ROOT_URLCONF = 'backend.urls'
@@ -84,13 +86,13 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 
-# Configuration de la base de données Oracle
 
 
+# configuration de la base de données oracle
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.oracle',
-        'NAME': 'localhost:1521/XE',  # Nom de l'instance Oracle
+        'NAME': 'localhost:1521/XEPDB1',  # Nom de l'instance Oracle
         'USER': 'C##admin_user',         # Utilisateur Oracle
         'PASSWORD': 'admin_user',     # Mot de passe de l'utilisateur
         'HOST': '',                   # Laissez vide pour une connexion locale
@@ -139,9 +141,9 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# configuration de l'url de la partie front 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",
-    "http://frontend:5173",
+   "http://localhost:5173",
 ]
  
 
@@ -160,4 +162,22 @@ LOGGING = {
             'propagate': False,
         },
     },
+}
+
+# Configuration REST Framework
+
+""" REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+}
+ """
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny',  # Permet à tout le monde d'accéder aux vues
+    ]
 }
