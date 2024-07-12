@@ -84,4 +84,15 @@
     .userdashboardCard{
       @apply bg-background/90 p-6 rounded-lg shadow-md ;
     }
+    .navParticipants{
+      @apply mt-10 bg-background/90 p-5 shadow-md ;
+    }
+    /* styles.css */
+    .ModalContent {
+      @apply bg-background/90  p-12 flex flex-col gap-4 rounded-lg shadow-lg w-96 mx-auto;
+    }
+    .sideBar {
+      @apply fixed top-0 left-0 h-full  border-r-2 shadow-lg p-8 flex flex-col items-center bg-background/90;
+    }
+
   }

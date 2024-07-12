@@ -11,6 +11,7 @@ import { LoginForm } from '../Pages/forms/LoginForm ';
 import SignUpForm from '../Pages/SignInForm/SignInForm';
 import { CreateTournament } from '../Pages/CreateTournament/CreateTournament';
 import { UserDashboard } from '../Pages/UserDashboard/UserDashboard';
+import { AfficheAdmin } from '../Pages/AdminPage/Adminpage';
 
 export const Header = () => {
   return (
@@ -45,6 +46,7 @@ export const Header = () => {
           {/* Ajoutez d'autres routes comme /calendrier, /groups, /equipes, /contact ici */}
           <Route path="/login/createTournament" element={<CreateTournament />} />
           <Route path="/login/UserDashboard" element={<UserDashboard />} />
+          <Route path="/login/CreateTournament/DashboardAmin" element={<AfficheAdmin/>} />
         </Routes>
       </BrowserRouter>
     </>

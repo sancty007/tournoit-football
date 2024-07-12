@@ -1,13 +1,6 @@
 import * as React from "react"
-<<<<<<< HEAD
 
 import { cn } from "../../lib/utils"
-
-=======
-import { cn } from "../../lib/utils"
-
-
->>>>>>> feature/feature_branch
 const Card = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
