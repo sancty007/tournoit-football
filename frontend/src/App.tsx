@@ -12,9 +12,6 @@ import { Header } from './components/Header'
 //import { AdminDashboard } from './Pages/AdminDashboard/AdminDashboard'
 
 //import { LoginForm } from './Pages/forms/LoginForm '
-
-
-
 function App() {
   return(
     <>
@@ -22,6 +19,7 @@ function App() {
       
        {/* <CreateTeam tournamentId={undefined} /> */}
     <Footer />
+
     </>
   )
 }

@@ -1,3 +1,4 @@
+
 import { Button } from "../../components/ui/moving-border";
 import { FlipWords } from "../../components/ui/flip-words";
 import home from '/images/home.png';
@@ -10,11 +11,11 @@ import { FaTwitter, FaLinkedin } from 'react-icons/fa';
 import { SocialMediaLinks } from "../../socialNetwork/socialNetwork";
 
 
-//import MainMenu from "../../components/Main-menu";
 
 
 
 export const Home  =() =>{
+
 
     const words = ["puissant", "efficace", "convivial"];
 
@@ -97,6 +98,7 @@ export const Home  =() =>{
                     speed="slow"
                 />
             </div>
+
         </>
     )
 }
