@@ -1,20 +1,19 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Card } from '../../components/ui/card';
 import { Input } from '../../components/ui/input';
 import { Button } from '../../components/ui/button';
 import siginInForm from '/images/siginInForm.png';
 import axios from 'axios';
 
-type SignUpFormProps = {
-  switchToSignIn: () => void;
-}
 
-const SignUpForm: React.FC<SignUpFormProps> = ({ switchToSignIn }) => {
+const SignUpForm = () => {
+  const navigate = useNavigate();
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  const [role, setRole] = useState(''); // Par défaut, l'utilisateur est enregistré en tant que 'player'
+  const [role, setRole] = useState('admin'); // Par défaut, l'utilisateur est enregistré en tant que 'player'
   const [error, setError] = useState('');
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -43,7 +42,11 @@ const SignUpForm: React.FC<SignUpFormProps> = ({ switchToSignIn }) => {
     setEmail('');
     setPassword('');
     setConfirmPassword('');
-    setRole(''); // Réinitialiser le rôle après l'inscription
+    setRole('admin'); // Réinitialiser le rôle après l'inscription
+  };
+
+  const handleSwitchToSignIn = () => {
+    navigate('/login');
   };
 
   return (
@@ -51,7 +54,7 @@ const SignUpForm: React.FC<SignUpFormProps> = ({ switchToSignIn }) => {
       <Card className='w-[385px] rounded-none border-none'>
         <img src={siginInForm} alt="" className='h-full w-full object-cover ' />
       </Card>
-      <Card className="p-8 rounded-none  max-w-md w-full">
+      <Card className="p-8 rounded-none max-w-md w-full">
         <h2 className="text-2xl font-semibold mb-4 text-center">Inscription</h2>
         <form onSubmit={handleSubmit}>
           {error && <p className="text-red-500 mb-4">{error}</p>}
@@ -132,7 +135,7 @@ const SignUpForm: React.FC<SignUpFormProps> = ({ switchToSignIn }) => {
             <button
               type="button"
               className="text-sm"
-              onClick={switchToSignIn}
+              onClick={handleSwitchToSignIn}
             >
               Déjà inscrit ? Se connecter
             </button>
