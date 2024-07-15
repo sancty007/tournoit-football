@@ -1,39 +1,55 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
-import { Button } from "./components/ui/button"
 
+
+
+//import { UserDashboard } from './Pages/UserDashboard/UserDashboard'
+import { CreateTournament } from './Pages/tournaments/CreateTournament/CreateTournament'
+import { UserDashboard } from './Pages/UserDashboard/UserDashboard'
+import TournamentList from './Pages/tournaments/PrintTournament/PrintTournament'
+import TournamentDetail from './Pages/tournaments/DetailTournament/DetailTournament'
+import { AfficheAdmin } from './Pages/tournaments/AdminPage/Adminpage'
+import { LoginForm } from './Pages/forms/LoginForm '
+import SignUpForm from './Pages/SignInForm/SignInForm'
+import { Home } from './Pages/Home/home'
+import Layout from './layouts/Layout'
+//import { CreateDivision } from './Pages/CreateDivision/CreateDivision'
+//import { CreateMatch } from './Pages/CreateMatch/CreateMatch'
+//import { AddPlayer } from './Pages/AddPlayer/AddPlayer'
+
+//import { AdminDashboard } from './Pages/AdminDashboard/AdminDashboard'
+
+//import { LoginForm } from './Pages/forms/LoginForm '
 function App() {
-  const [count, setCount] = useState(0)
 
-  return (
-    <>
-      <div className='bg-slate-500'>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        {/* <button >
+  function switchToSignIn(): void {
+    // Suppression de l'erreur
+    console.log('Switch to sign in');
+  }
+
+  return(
+      <BrowserRouter>
+        <Routes>
+
+          <Route element={<Layout/>}>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<LoginForm />} />
+            <Route path="/signup" element={<SignUpForm switchToSignIn={switchToSignIn} />} />
+            <Route path="/login/UserDashboard" element={<UserDashboard />} />
+          </Route>
           
-        </button> */}
-        <Button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </Button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+
+          {/* gestion de tournoit  par l'admin*/}
+          <Route path="/login/tournaments/new" element={<CreateTournament />} />
+          <Route path="/login/tournaments/:id" element={<TournamentDetail/>} />
+          <Route path="/login/tournaments" element={<TournamentList/>} />
+          <Route path="/login/tournaments/DashboardAmin" element={<AfficheAdmin/>} />
+
+          <Route path="/login/UserDashboard" element={<UserDashboard />} />
+        </Routes>
+      </BrowserRouter>
   )
 }
 
 export default App
+// src/api.js

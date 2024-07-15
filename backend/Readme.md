@@ -1,4 +1,4 @@
-Créer l'image Docker pour l'application Django
+
 
 Assurez-vous que vous avez un Dockerfile dans le répertoire de votre application Django. Voici un exemple de Dockerfile pour une application Django :
 
@@ -28,4 +28,8 @@ CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
 
 Dans le terminal, naviguez vers le répertoire contenant le Dockerfile et construisez l'image Docker :
 
-docker build -t my-django-app .
+docker build -t my-django-app .//construire l'application
+
+
+
+

@@ -36,9 +36,18 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
+    #application de gestion des requetes
+    'rest_framework',
+    'rest_framework_simplejwt',
     'api',
     'corsheaders',
+    # nos application de gestion de foot 
+    'users',
+ 
 ]
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -48,8 +57,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    # connection des requetes entre front et back
     'corsheaders.middleware.CorsMiddleware',
-    'django.middleware.common.CommonMiddleware',
 ]
 
 ROOT_URLCONF = 'backend.urls'
@@ -78,22 +88,16 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 
 
 
-
-# Configurez cx_Oracle pour l'utilisation de Thin Mode (connexion à distance)
-#cx_Oracle.init_oracle_client(lib_dir=None)
-
-
-# Configuration de la base de données Oracle
-
+# configuration de la base de données oracle
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.oracle',
-        'NAME': 'XEPDB1',         # Nom de la base de données Oracle (service_name)
-        'USER': 'sys',        # Utilisateur Oracle
-        'PASSWORD': 'welcome123',  # Mot de passe de l'utilisateur Oracle
-        'HOST': 'oracle-db',  # Adresse IP ou nom d'hôte du conteneur Docker Oracle
-        'PORT': '1522',       # Port Oracle
-       
+        'NAME': 'localhost:1521/XEPDB1',  # Nom de l'instance Oracle
+        'USER': 'C##admin_user',         # Utilisateur Oracle
+        'PASSWORD': 'admin_user',     # Mot de passe de l'utilisateur
+        'HOST': '',                   # Laissez vide pour une connexion locale
+        'PORT': '',                   # Laissez vide pour utiliser le port par défaut
+        # Ne spécifiez pas 'OPTIONS' pour utiliser le mode par défaut
     }
 }
 
@@ -137,9 +141,9 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# configuration de l'url de la partie front 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",
-    "http://frontend:5173",
+   "http://localhost:5173",
 ]
  
 
@@ -158,4 +162,11 @@ LOGGING = {
             'propagate': False,
         },
     },
+}
+
+# Configuration REST Framework
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
 }
