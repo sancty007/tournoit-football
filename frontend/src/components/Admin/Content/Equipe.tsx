@@ -1,4 +1,4 @@
-import { SetStateAction, useState } from "react";
+import { useState } from "react";
 import Modal from "../Modal/Modal";
 import Controller from "../Controller/Controller";
 import admin_image from "/images/admin_image.png";
@@ -80,6 +80,15 @@ export const Equipe = () => {
             ...prev,
             [type]: prev[type].filter((_, i) => i !== index)
         }));
+
+        // Update the display state based on the list length after deletion
+        if (type === "equipes" && entries.equipes.length === 1) {
+            setShowEquipeList(false);
+        } else if (type === "arbitres" && entries.arbitres.length === 1) {
+            setShowArbitreList(false);
+        } else if (type === "administrateurs" && entries.administrateurs.length === 1) {
+            setShowAdminList(false);
+        }
     };
 
     const [toggle, setToggle] = useState(1);
@@ -87,9 +96,9 @@ export const Equipe = () => {
     const isToggle = (id: number) => {
         setToggle(id);
         // Reset the display states
-        setShowEquipeList(false);
-        setShowArbitreList(false);
-        setShowAdminList(false);
+        setShowEquipeList(entries.equipes.length > 0);
+        setShowArbitreList(entries.arbitres.length > 0);
+        setShowAdminList(entries.administrateurs.length > 0);
     };
 
     return (
@@ -131,7 +140,7 @@ export const Equipe = () => {
             <div className={toggle === 1 ? "block" : "hidden"}>
                 <div className="flex flex-col md:flex-row items-center justify-center ">
                     {!showEquipeList && (
-                        <div className="mt-6">
+                        <div className="">
                             <Controller
                                 titre="Ajouter une équipe"
                                 content="Contenu de la boîte modale"
@@ -161,7 +170,8 @@ export const Equipe = () => {
                                             <Button 
                                                 className="bg-gray-500 text-white px-2 py-1 rounded"
                                                 onClick={() => handleEdit(index, equipe, "equipes")}
-                                            >Modifier
+                                            >
+                                                Modifier
                                             </Button>
                                             <Button 
                                                 className="bg-red-500 text-white px-2 py-1 rounded"
