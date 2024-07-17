@@ -30,7 +30,7 @@ export const Classement: React.FC = () => {
     setTeamsPerPoule('');
   };
 
-  const handleAddPoules = () => {
+  const handleAddPoules = (name: string) => {
     const newPoules = Array.from({ length: parseInt(numPoules) }, (_, i) => ({
       id: i + poules.length,
       teams: Array.from({ length: parseInt(teamsPerPoule) }, (_, j) => ({ name: `Équipe ${j + 1}` })),
@@ -43,6 +43,15 @@ export const Classement: React.FC = () => {
     setPoules(poules.filter(poule => poule.id !== id));
   };
 
+  const handleEditPoule = (id: number, name: string) => {
+    const updatedPoules = poules.map(poule =>
+      poule.id === id
+        ? { ...poule, teams: [...poule.teams, { name: `Nouvelle Équipe` }] }
+        : poule
+    );
+    setPoules(updatedPoules);
+  };
+
   return (
     <div className="p-8 space-y-5">
       {poules.length === 0 && (
@@ -53,21 +62,21 @@ export const Classement: React.FC = () => {
               <h2 className="text-center">Seulement les phases de groupe</h2>
               <img src={classement1} className="w-full" alt="Classement 1" />
               <Button className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute bottom-0 left-1/2 transform -translate-x-1/2 mb-16 p-8 bg-blue-600">
-                Créer Poules
+              Seulement les phases de groupe
               </Button>
             </div>
             <div className="w-full group relative" onClick={() => handleOpenModal(2)}>
               <h2 className="text-center">Phase de poules et phase éliminatoire</h2>
               <img src={classement3} className="w-full" alt="Classement 3" />
               <Button className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute bottom-0 left-1/2 transform -translate-x-1/2 mb-16 p-8 bg-blue-600">
-                Créer Poules
+              Phase de poules et phase éliminatoire
               </Button>
             </div>
             <div className="w-full group relative" onClick={() => handleOpenModal(3)}>
               <h2 className="text-center">Phase éliminatoire seulement</h2>
               <img src={classement4} className="w-full" alt="Classement 4" />
               <Button className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute bottom-0 left-1/2 transform -translate-x-1/2 mb-16 p-8 bg-blue-600">
-                Créer Poules
+              Phase éliminatoire seulement
               </Button>
             </div>
           </div>
@@ -107,6 +116,18 @@ export const Classement: React.FC = () => {
                     </ul>
                   </td>
                   <td className="border p-2">
+                    <Button
+                      className="bg-blue-500 text-white mr-2"
+                      onClick={() => handleEditPoule(poule.id, `Nom personnalisé pour ${poule.id + 1}`)}
+                    >
+                      Ajouter
+                    </Button>
+                    <Button
+                      className="bg-blue-500 text-white mr-2"
+                      onClick={() => handleEditPoule(poule.id, `Nom personnalisé pour ${poule.id + 1}`)}
+                    >
+                      Modifier
+                    </Button>
                     <Button
                       className="bg-red-500 text-white"
                       onClick={() => handleDeletePoule(poule.id)}

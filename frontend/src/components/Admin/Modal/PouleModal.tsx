@@ -22,6 +22,12 @@ const CreatePouleModal: React.FC<CreatePouleModalProps> = ({
 }) => {
   if (!show) return null;
 
+  const handleCancel = () => {
+    onClose();
+    setNumPoules('');
+    setTeamsPerPoule('');
+  };
+
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
       <div className="bg-white rounded-lg shadow-lg p-6 w-96">
@@ -43,9 +49,14 @@ const CreatePouleModal: React.FC<CreatePouleModalProps> = ({
           placeholder="Nombre d'équipes par poule"
           className="w-full p-2 mb-4 border"
         />
-        <Button onClick={onAddPoules} className="w-full bg-blue-600 text-white">
-          Valider
-        </Button>
+        <div className="flex gap-4">
+          <Button onClick={handleCancel} className="w-full bg-gray-400 text-white">
+            Annuler
+          </Button>
+          <Button onClick={onAddPoules} className="w-full bg-blue-600 text-white">
+            Valider
+          </Button>
+        </div>
       </div>
     </div>
   );
