@@ -102,8 +102,8 @@ export const Equipe = () => {
     };
 
     return (
-        <div className="container mx-auto p-16">
-            <Card className="navParticipants">
+        <div className="container mx-auto p-8 space-y-8">
+            <Card className="navParticipants ">
                 <ul className="flex flex-row gap-5 justify-around items-center text-lg cursor-pointer">
                     <li
                         className={
