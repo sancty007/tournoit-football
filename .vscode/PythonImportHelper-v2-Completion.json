@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 [
     {
         "label": "admin",
@@ -277,6 +279,14 @@
         "documentation": {}
     },
     {
+        "label": "CustomTokenObtainPairView",
+        "importPath": "users.views",
+        "description": "users.views",
+        "isExtraImport": true,
+        "detail": "users.views",
+        "documentation": {}
+    },
+    {
         "label": "CustomUserViewSet",
         "importPath": "users.views",
         "description": "users.views",
@@ -298,6 +308,22 @@
         "description": "rest_framework.permissions",
         "isExtraImport": true,
         "detail": "rest_framework.permissions",
+        "documentation": {}
+    },
+    {
+        "label": "TokenObtainPairView",
+        "importPath": "rest_framework_simplejwt.views",
+        "description": "rest_framework_simplejwt.views",
+        "isExtraImport": true,
+        "detail": "rest_framework_simplejwt.views",
+        "documentation": {}
+    },
+    {
+        "label": "TokenObtainPairSerializer",
+        "importPath": "rest_framework_simplejwt.serializers",
+        "description": "rest_framework_simplejwt.serializers",
+        "isExtraImport": true,
+        "detail": "rest_framework_simplejwt.serializers",
         "documentation": {}
     },
     {
@@ -555,7 +581,7 @@
         "kind": 5,
         "importPath": "backend.backend.settings",
         "description": "backend.backend.settings",
-        "peekOfCode": "REST_FRAMEWORK = {\n    'DEFAULT_PERMISSION_CLASSES': [\n        'rest_framework.permissions.AllowAny',  # Permet à tout le monde d'accéder aux vues\n    ]\n}",
+        "peekOfCode": "REST_FRAMEWORK = {\n    'DEFAULT_AUTHENTICATION_CLASSES': (\n        'rest_framework_simplejwt.authentication.JWTAuthentication',\n    ),\n}",
         "detail": "backend.backend.settings",
         "documentation": {}
     },
@@ -564,7 +590,7 @@
         "kind": 5,
         "importPath": "backend.backend.urls",
         "description": "backend.backend.urls",
-        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('api/', include('api.urls')),\n    path('users/', include('users.urls')),\n]\n#  path('users_t/', include('users_t.urls')),\n\"\"\"  path('teams/', include('teams.urls')),\n    path('tournaments/', include('tournaments.urls')),\n    path('notifications/', include('notifications.urls')),\n    path('comments/', include('comments.urls')), \"\"\"",
+        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('api/', include('api.urls')),  # Inclusion des routes de l'API\n    path('users/', include('users.urls')),\n]\n#  path('users_t/', include('users_t.urls')),\n\"\"\"  path('teams/', include('teams.urls')),\n    path('tournaments/', include('tournaments.urls')),\n    path('notifications/', include('notifications.urls')),\n    path('comments/', include('comments.urls')), \"\"\"",
         "detail": "backend.backend.urls",
         "documentation": {}
     },
@@ -636,7 +662,7 @@
         "kind": 5,
         "importPath": "backend.users.urls",
         "description": "backend.users.urls",
-        "peekOfCode": "router = DefaultRouter()\nrouter.register(r'users', CustomUserViewSet)\nurlpatterns = [\n    path('', include(router.urls)),\n    # Autres URLs de votre application\n]",
+        "peekOfCode": "router = DefaultRouter()\nrouter.register(r'users', CustomUserViewSet)\nurlpatterns = [\n    path('', include(router.urls)),\n    path('token/', CustomTokenObtainPairView.as_view(), name='token_obtain_pair'),\n    # Autres URLs de votre application\n]",
         "detail": "backend.users.urls",
         "documentation": {}
     },
@@ -645,7 +671,7 @@
         "kind": 5,
         "importPath": "backend.users.urls",
         "description": "backend.users.urls",
-        "peekOfCode": "urlpatterns = [\n    path('', include(router.urls)),\n    # Autres URLs de votre application\n]",
+        "peekOfCode": "urlpatterns = [\n    path('', include(router.urls)),\n    path('token/', CustomTokenObtainPairView.as_view(), name='token_obtain_pair'),\n    # Autres URLs de votre application\n]",
         "detail": "backend.users.urls",
         "documentation": {}
     },
@@ -654,7 +680,25 @@
         "kind": 6,
         "importPath": "backend.users.views",
         "description": "backend.users.views",
-        "peekOfCode": "class CustomUserViewSet(viewsets.ModelViewSet):\n    queryset = CustomUser.objects.all()\n    serializer_class = CustomUserSerializer\n    permission_classes = [IsAuthenticatedOrReadOnly]\n    def get_permissions(self):\n        if self.action == 'create':\n            return [AllowAny()]\n        return super().get_permissions()",
+        "peekOfCode": "class CustomUserViewSet(viewsets.ModelViewSet):\n    queryset = CustomUser.objects.all()\n    serializer_class = CustomUserSerializer\n    permission_classes = [IsAuthenticatedOrReadOnly]\n    def get_permissions(self):\n        if self.action == 'create':\n            return [AllowAny()]\n        return super().get_permissions()\nclass CustomTokenObtainPairSerializer(TokenObtainPairSerializer):\n    @classmethod",
+        "detail": "backend.users.views",
+        "documentation": {}
+    },
+    {
+        "label": "CustomTokenObtainPairSerializer",
+        "kind": 6,
+        "importPath": "backend.users.views",
+        "description": "backend.users.views",
+        "peekOfCode": "class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):\n    @classmethod\n    def get_token(cls, user):\n        token = super().get_token(user)\n        # Ajoutez des claims personnalisés ici si nécessaire\n        token['username'] = user.username\n        token['role'] = user.profile.role  # Assurez-vous d'avoir un profil utilisateur avec un rôle\n        return token\nclass CustomTokenObtainPairView(TokenObtainPairView):\n    serializer_class = CustomTokenObtainPairSerializer",
+        "detail": "backend.users.views",
+        "documentation": {}
+    },
+    {
+        "label": "CustomTokenObtainPairView",
+        "kind": 6,
+        "importPath": "backend.users.views",
+        "description": "backend.users.views",
+        "peekOfCode": "class CustomTokenObtainPairView(TokenObtainPairView):\n    serializer_class = CustomTokenObtainPairSerializer",
         "detail": "backend.users.views",
         "documentation": {}
     },
@@ -839,3 +883,4 @@
         "documentation": {}
     }
 ]
+>>>>>>> 1196539d97c13c0a3b3242149a5e679b8ab2da15

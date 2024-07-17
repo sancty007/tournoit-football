@@ -1,13 +1,14 @@
 // src/CreateTournament.js
 import axios from 'axios';
 import { useState } from 'react';
-import { Input } from '../../components/ui/input';
-import { Card } from '../../components/ui/card';
-import { Button } from '../../components/ui/moving-border';
+import { Input } from '../../../components/ui/input';
+import { Card } from '../../../components/ui/card';
+import { Button } from '../../../components/ui/moving-border';
 
 export const CreateTournament = () => {
     const [name, setName] = useState('');
-    const [date, setDate] = useState('');
+    const [startDate, setStartDate] = useState('');
+    const [endDate, setEndDate] = useState('');
     const [location, setLocation] = useState('');
     const [success, setSuccess] = useState('');
     const [error, setError] = useState('');
@@ -17,12 +18,17 @@ export const CreateTournament = () => {
         try {
             const response = await axios.post('http://localhost:8000/tournaments/', {
                 name,
-                date,
+                start_date: startDate,
+                end_date: endDate,
                 location,
             });
             if (response.data.success) {
                 setSuccess('Tournament created successfully!');
                 setError('');
+                setName('');
+                setStartDate('');
+                setEndDate('');
+                setLocation('');
             } else {
                 setError('Failed to create tournament.');
                 setSuccess('');
@@ -51,12 +57,23 @@ export const CreateTournament = () => {
                     />
                 </div>
                 <div className="mb-4">
-                    <label className="block mb-2" htmlFor="date">Date</label>
+                    <label className="block mb-2" htmlFor="start_date">Start Date</label>
                     <Input
                         type="date"
-                        id="date"
-                        value={date}
-                        onChange={(e) => setDate(e.target.value)}
+                        id="start_date"
+                        value={startDate}
+                        onChange={(e) => setStartDate(e.target.value)}
+                        className="w-full p-2 border rounded"
+                        required
+                    />
+                </div>
+                <div className="mb-4">
+                    <label className="block mb-2" htmlFor="end_date">End Date</label>
+                    <Input
+                        type="date"
+                        id="end_date"
+                        value={endDate}
+                        onChange={(e) => setEndDate(e.target.value)}
                         className="w-full p-2 border rounded"
                         required
                     />
@@ -75,7 +92,7 @@ export const CreateTournament = () => {
                 <div className='flex justify-center items-center'>
                     <Button
                         type="submit"
-                        className="w-full  text-white p-2 rounded"
+                        className="w-full text-white p-2 rounded"
                     >
                         Create
                     </Button>
@@ -84,4 +101,3 @@ export const CreateTournament = () => {
         </Card>
     );
 };
-
