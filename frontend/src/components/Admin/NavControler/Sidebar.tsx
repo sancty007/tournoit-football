@@ -15,11 +15,9 @@ export const Sidebar = () => {
   };
 
 
-
   const toggleSidebar = () => {
     setIsCollapsed(!isCollapsed);
   };
-
 
   return (
     <>
