@@ -13,10 +13,10 @@ export const Header = () => {
         <div className="container mx-auto flex justify-between items-center">
           <div>
             <ul className="flex gap-8">
-              <li><Link to="/">HOME</Link></li>
+              <li><Link to="/">ACCUEIL</Link></li>
               <li><Link to="/calendrier">CALENDRIER</Link></li>
-              <li><Link to="/groups">GROUPS</Link></li>
-              <li><Link to="/equipes">EQUIPES</Link></li>
+              <li><Link to="/groups">GROUPES</Link></li>
+              <li><Link to="/equipes">ÉQUIPES</Link></li>
               <li><Link to="/contact">CONTACT</Link></li>
             </ul>
           </div>
