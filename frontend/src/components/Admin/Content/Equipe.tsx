@@ -205,7 +205,7 @@ export const Equipe = () => {
 												{/* Utilisation de LucideUser ici */}
 											</Button>
 
-                                            {showPlayerManager && <PlayerManager />}
+                                             {showPlayerManager && <PlayerManager />}
 										</div>
                                        
 									</li>
