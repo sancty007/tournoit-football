@@ -31,15 +31,15 @@ const PlayerListModal: React.FC<PlayerListModalProps> = ({ isOpen, onClose, play
                                 <span>
                                     {player.name} - {player.birthdate}
                                 </span>
-                                <div className="flex gap-2">
+                                <div className="flex gap-2 ">
                                     <Button
-                                        className="p-2"
+                                        className="p-2 bg-none"
                                         onClick={() => onEdit(index)}
                                     >
                                         <PencilIcon className="h-5 w-5 text-gray-600" />
                                     </Button>
                                     <Button
-                                        className="p-2"
+                                        className="p-2 bg-none"
                                         onClick={() => onDelete(index)}
                                     >
                                         <TrashIcon className="h-5 w-5 text-red-600" />
@@ -51,8 +51,8 @@ const PlayerListModal: React.FC<PlayerListModalProps> = ({ isOpen, onClose, play
                 ) : (
                     <p className="text-md">Aucun joueur ajouté.</p>
                 )}
-                <div className="flex justify-end mt-4">
-                    <Button onClick={onClose} className="py-2 px-4 rounded-md">
+                <div className="flex justify-end mt-4 gap-2">
+                    <Button onClick={onClose} className="py-2 px-4 bg-slate-400 rounded-md">
                         Fermer
                     </Button>
                     <Button onClick={() => onEdit(null)} className="py-2 px-4 rounded-md">
