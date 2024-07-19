@@ -7,6 +7,7 @@ import arbitre from "/images/arbitre.png";
 import { LucideUser } from "lucide-react";
 import { Card } from "../../ui/card";
 import { Button } from "../../ui/button";
+
 import PlayerManagement from "../Modal/MainModal"; // Import PlayerManagement
 
 export const Equipe = () => {
@@ -187,13 +188,16 @@ export const Equipe = () => {
                         onClick={() => setShowPlayerManager(true)}>
                         <LucideUser size={20} />
                       </Button>
+
                     </div>
                   </li>
                 ))}
               </ul>
+
               <Button
                 className="mt-4 px-4 py-2 rounded"
                 onClick={() => handleOpenModal("equipes")}>
+
                 Ajouter une équipe
               </Button>
             </div>
@@ -217,10 +221,11 @@ export const Equipe = () => {
             isOpen={showModal}
             onClose={handleCloseModal}
             onSave={handleSave}
+
             titre={
               editIndex !== null ? "Modifier un arbitre" : "Ajouter un arbitre"
             }
-            content="Contenu de la boîte modale"
+    content="Contenu de la boîte modale"
             placeholder="Nom de l'arbitre"
             defaultValue={editValue}
           />
@@ -229,6 +234,7 @@ export const Equipe = () => {
               <h3 className="text-lg font-semibold mb-2">Liste des arbitres</h3>
               <ul className="list-disc pl-5">
                 {entries.arbitres.map((arbitre, index) => (
+
                   <li
                     className="border-b-2 border-gray-300 py-2 flex justify-between items-center"
                     key={index}>
@@ -242,16 +248,18 @@ export const Equipe = () => {
                       <Button
                         className="bg-red-500 text-white px-2 py-1 rounded"
                         onClick={() => handleDelete(index, "arbitres")}>
+
                         Supprimer
                       </Button>
                     </div>
                   </li>
                 ))}
               </ul>
+
               <Button
                 className="mt-4 px-4 py-2 rounded"
                 onClick={() => handleOpenModal("arbitres")}>
-                Ajouter un arbitre
+         Ajouter un arbitre
               </Button>
             </div>
           )}
@@ -274,11 +282,13 @@ export const Equipe = () => {
             isOpen={showModal}
             onClose={handleCloseModal}
             onSave={handleSave}
+
             titre={
               editIndex !== null
                 ? "Modifier un administrateur"
                 : "Ajouter un administrateur"
             }
+
             content="Contenu de la boîte modale"
             placeholder="Nom de l'administrateur"
             defaultValue={editValue}
@@ -287,6 +297,7 @@ export const Equipe = () => {
             <div className="w-full mt-6">
               <h3 className="text-lg font-semibold mb-2">Liste des administrateurs</h3>
               <ul className="list-disc pl-5">
+
                 {entries.administrateurs.map((administrateur, index) => (
                   <li
                     className="border-b-2 border-gray-300 py-2 flex justify-between items-center"
@@ -303,21 +314,25 @@ export const Equipe = () => {
                       <Button
                         className="bg-red-500 text-white px-2 py-1 rounded"
                         onClick={() => handleDelete(index, "administrateurs")}>
+
                         Supprimer
                       </Button>
                     </div>
                   </li>
                 ))}
               </ul>
+
               <Button
                 className="mt-4 px-4 py-2 rounded"
                 onClick={() => handleOpenModal("administrateurs")}>
+
                 Ajouter un administrateur
               </Button>
             </div>
           )}
         </div>
       </div>
+
 
       {/* Player Management Modal */}
       <PlayerManagement

@@ -1,19 +1,21 @@
-// src/CreateTournament.js
+// src/CreateTournament.tsx
 import axios from 'axios';
-import { useState } from 'react';
+import { useState, FormEvent } from 'react';
 import { Input } from '../../../components/ui/input';
 import { Card } from '../../../components/ui/card';
-import { Button } from '../../../components/ui/moving-border';
+import { Button } from '../../../components/ui/button';
+import { UserProfile } from '../userProfil/UserProfile';
+
 
 export const CreateTournament = () => {
-    const [name, setName] = useState('');
-    const [startDate, setStartDate] = useState('');
-    const [endDate, setEndDate] = useState('');
-    const [location, setLocation] = useState('');
-    const [success, setSuccess] = useState('');
-    const [error, setError] = useState('');
+    const [name, setName] = useState<string>('');
+    const [startDate, setStartDate] = useState<string>('');
+    const [endDate, setEndDate] = useState<string>('');
+    const [location, setLocation] = useState<string>('');
+    const [success, setSuccess] = useState<string>('');
+    const [error, setError] = useState<string>('');
 
-    const handleSubmit = async (e: { preventDefault: () => void; }) => {
+    const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
         try {
             const response = await axios.post('http://localhost:8000/tournaments/', {
@@ -42,6 +44,7 @@ export const CreateTournament = () => {
     return (
         <Card className="min-h-screen p-4 flex justify-center items-center">
             <form onSubmit={handleSubmit} className="p-8 rounded shadow-md w-96">
+                <UserProfile />
                 <h2 className="text-2xl font-bold mb-6 text-center">Create New Tournament</h2>
                 {success && <p className="text-green-500 mb-4">{success}</p>}
                 {error && <p className="text-red-500 mb-4">{error}</p>}

@@ -6,17 +6,16 @@ import { Button } from '../../components/ui/button';
 import siginInForm from '/images/siginInForm.png';
 import axios from 'axios';
 
-
 const SignUpForm = () => {
   const navigate = useNavigate();
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  const [role, setRole] = useState('admin'); // Par défaut, l'utilisateur est enregistré en tant que 'player'
+  const [role, setRole] = useState('admin'); // Par défaut, l'utilisateur est enregistré en tant que 'admin'
   const [error, setError] = useState('');
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: { preventDefault: () => void; }) => {
     e.preventDefault();
     if (password !== confirmPassword) {
       setError("Passwords do not match.");
@@ -24,25 +23,18 @@ const SignUpForm = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:8000/users/users/', {
+      const response = await axios.post('http://localhost:8000/register/', {
         username,
         email,
         password,
-        role, // Utilise le rôle sélectionné dans le formulaire
+        role,
       });
       console.log('Utilisateur créé avec succès:', response.data);
-      // Redirection ou autre traitement après inscription réussie
+      navigate('/login'); // Redirection vers la page de connexion après inscription réussie
     } catch (error) {
       console.error('Erreur lors de la création de l\'utilisateur:', error);
       setError('Erreur lors de la création de l\'utilisateur. Veuillez réessayer.');
     }
-    
-    // Réinitialiser le formulaire après la soumission
-    setUsername('');
-    setEmail('');
-    setPassword('');
-    setConfirmPassword('');
-    setRole('admin'); // Réinitialiser le rôle après l'inscription
   };
 
   const handleSwitchToSignIn = () => {
