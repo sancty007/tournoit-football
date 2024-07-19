@@ -85,7 +85,7 @@
       @apply bg-background/90 p-6 rounded-lg shadow-md ;
     }
     .navParticipants{
-      @apply mt-10 bg-background/90 p-5 shadow-md ;
+      @apply  bg-background/90 p-5 shadow-md ;
     }
     /* styles.css */
     .ModalContent {
