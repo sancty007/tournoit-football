@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from "react";
 import Modal from "../Modal/Modal";
 import Controller from "../Controller/Controller";
 import admin_image from "/images/admin_image.png";
