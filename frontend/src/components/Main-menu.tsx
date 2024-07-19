@@ -3,6 +3,7 @@ import { AlignLeft} from "lucide-react";
 import { useMediaQuery } from "../hooks/use-media-query";
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTrigger } from "./ui/sheet";
 import { Link } from "react-router-dom";
+import { IoFootballSharp } from "react-icons/io5";
 
 
 
@@ -22,7 +23,7 @@ export default function MainMenu() {
                 <SheetContent>
                     <SheetHeader>
                         <SheetDescription>
-                            <div  className="">
+                            <div  className="grid grid-cols-1">
                                 <ul className="grid grid-cols-1 space-y-4">
                                     <li><Link to="/">HOME</Link></li>
                                     <li><Link to="/calendrier">CALENDRIER</Link></li>
@@ -30,7 +31,14 @@ export default function MainMenu() {
                                     <li><Link to="/equipes">EQUIPES</Link></li>
                                     <li><Link to="/contact">CONTACT</Link></li>
                                 </ul>
-                            </div>.
+
+                                <div className='py-10'>
+                                    <h1 className=' flex items-center justify-center text-2xl'>
+                                        <span className='text-red-700'>Linga</span>F<IoFootballSharp className="text-3xl lg:text-xl" /><IoFootballSharp className="text-3xl lg:text-xl" />T
+                                    </h1>
+                                </div>
+                            </div>
+                            
                         </SheetDescription>
                     </SheetHeader>
             </SheetContent>
