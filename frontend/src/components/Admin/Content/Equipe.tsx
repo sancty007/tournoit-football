@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Modal from "../Modal/Modal";
 import Controller from "../Controller/Controller";
 import admin_image from "/images/admin_image.png";
@@ -7,7 +7,7 @@ import arbitre from "/images/arbitre.png";
 import { LucideUser } from "lucide-react";
 import { Card } from "../../ui/card";
 import { Button } from "../../ui/button";
-import PlayerManager from "../Modal/MainModal";
+import PlayerManagement from "../Modal/MainModal"; // Import PlayerManagement
 
 export const Equipe = () => {
   const [showModal, setShowModal] = useState(false);
@@ -264,7 +264,7 @@ export const Equipe = () => {
               <Controller
                 titre="Ajouter un administrateur"
                 content="Contenu de la boîte modale"
-                image={admin_image}
+                image={ballon}
                 btitre="Ajouter un administrateur"
                 onclick={() => handleOpenModal("administrateurs")}
               />
@@ -318,6 +318,12 @@ export const Equipe = () => {
           )}
         </div>
       </div>
+
+      {/* Player Management Modal */}
+      <PlayerManagement
+        isOpen={showPlayerManager}
+        onClose={() => setShowPlayerManager(false)}
+      />
     </div>
   );
 };

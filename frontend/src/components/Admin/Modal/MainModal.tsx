@@ -1,61 +1,76 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import AddPlayerModal, { Player } from "../Modal/AddModal";
+import PlayerListModal from "../Modal/ListModal";
 import { Button } from "../../ui/button";
-import AddPlayerModal, { Player } from "./AddModal";
-import PlayerListModal from "./ListModal";
 
-const PlayerManager: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOpen, onClose }) => {
-    const [players, setPlayers] = useState<Player[]>([]);
-    const [editIndex, setEditIndex] = useState<number | null>(null);
-    const [showPlayerList, setShowPlayerList] = useState(false);
+const PlayerManagement: React.FC<{ isOpen: boolean; onClose: () => void }> = ({
+  isOpen,
+  onClose,
+}) => {
+  const [players, setPlayers] = useState<Player[]>([]);
+  const [isAddPlayerModalOpen, setIsAddPlayerModalOpen] = useState(false);
+  const [editIndex, setEditIndex] = useState<number | null>(null);
 
-    const handleAddPlayer = (player: Player) => {
-        if (editIndex !== null) {
-            // Update existing player
-            const updatedPlayers = [...players];
-            updatedPlayers[editIndex] = player;
-            setPlayers(updatedPlayers);
-            setEditIndex(null);
-        } else {
-            // Add new player
-            setPlayers([...players, player]);
-        }
-        // Switch to show player list after adding
-        setShowPlayerList(true);
-    };
+  useEffect(() => {
+    const savedPlayers = localStorage.getItem("players");
+    if (savedPlayers) {
+      setPlayers(JSON.parse(savedPlayers));
+    }
+  }, []);
 
-    const handleEditPlayer = (index: number) => {
-        setEditIndex(index);
-        // Keep the player list modal closed while editing
-        setShowPlayerList(false);
-    };
+  const handleAddPlayer = (player: Player) => {
+    const updatedPlayers =
+      editIndex !== null
+        ? players.map((p, index) => (index === editIndex ? player : p))
+        : [...players, player];
 
-    const handleDeletePlayer = (index: number) => {
-        const updatedPlayers = players.filter((_, i) => i !== index);
-        setPlayers(updatedPlayers);
-    };
+    setPlayers(updatedPlayers);
+    localStorage.setItem("players", JSON.stringify(updatedPlayers));
+    setIsAddPlayerModalOpen(false);
+    setEditIndex(null);
+  };
 
-    if (!isOpen) return null; // Don't render if not open
+  const handleEdit = (index: number | null) => {
+    setEditIndex(index);
+    setIsAddPlayerModalOpen(true);
+  };
 
-    return (
-        <div className="container mx-auto p-16">
-            {!showPlayerList ? (
-                <AddPlayerModal
-                    isOpen={isOpen}
-                    onClose={onClose}
-                    onSave={handleAddPlayer}
-                    player={editIndex !== null ? players[editIndex] : null}
-                />
-            ) : (
-                <PlayerListModal
-                    isOpen={isOpen}
-                    onClose={onClose}
-                    players={players}
-                    onEdit={handleEditPlayer}
-                    onDelete={handleDeletePlayer}
-                />
-            )}
-        </div>
-    );
+  const handleDelete = (index: number) => {
+    const updatedPlayers = players.filter((_, i) => i !== index);
+    setPlayers(updatedPlayers);
+    localStorage.setItem("players", JSON.stringify(updatedPlayers));
+  };
+
+  const handleCloseAddPlayerModal = () => {
+    setIsAddPlayerModalOpen(false);
+    setEditIndex(null);
+    onClose();
+  };
+
+  useEffect(() => {
+    if (isOpen) {
+      setIsAddPlayerModalOpen(true);
+    }
+  }, [isOpen]);
+
+  return (
+    <div>
+      <PlayerListModal
+        isOpen={isAddPlayerModalOpen}
+        onClose={handleCloseAddPlayerModal}
+        players={players}
+        onEdit={handleEdit}
+        onDelete={handleDelete}
+      />
+
+      <AddPlayerModal
+        isOpen={isAddPlayerModalOpen}
+        onClose={handleCloseAddPlayerModal}
+        onSave={handleAddPlayer}
+        player={editIndex !== null ? players[editIndex] : null}
+      />
+    </div>
+  );
 };
 
-export default PlayerManager;
+export default PlayerManagement;

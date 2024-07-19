@@ -3,7 +3,6 @@ import { Button } from "../../ui/button";
 import { Card } from "../../ui/card";
 import { PencilIcon, TrashIcon } from "lucide-react";
 
-
 export type Player = {
     name: string;
     birthdate: string;
