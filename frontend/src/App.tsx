@@ -6,13 +6,13 @@ import './App.css'
 //import { UserDashboard } from './Pages/UserDashboard/UserDashboard'
 import { CreateTournament } from './Pages/tournaments/CreateTournament/CreateTournament'
 import { UserDashboard } from './Pages/UserDashboard/UserDashboard'
-import TournamentList from './Pages/tournaments/PrintTournament/PrintTournament'
 import TournamentDetail from './Pages/tournaments/DetailTournament/DetailTournament'
 import { AfficheAdmin } from './Pages/tournaments/AdminPage/Adminpage'
 import { LoginForm } from './Pages/forms/LoginForm '
 import SignUpForm from './Pages/SignInForm/SignInForm'
 import { Home } from './Pages/Home/home'
 import Layout from './layouts/Layout'
+import { TournamentsList } from './Pages/tournaments/TournamentList/TournamentList'
 //import { CreateDivision } from './Pages/CreateDivision/CreateDivision'
 //import { CreateMatch } from './Pages/CreateMatch/CreateMatch'
 //import { AddPlayer } from './Pages/AddPlayer/AddPlayer'
@@ -42,7 +42,7 @@ function App() {
           {/* gestion de tournoit  par l'admin*/}
           <Route path="/login/tournaments/new" element={<CreateTournament />} />
           <Route path="/login/tournaments/:id" element={<TournamentDetail/>} />
-          <Route path="/login/tournaments" element={<TournamentList/>} />
+          <Route path="/login/tournaments" element={<TournamentsList/>} />
           <Route path="/login/tournaments/DashboardAmin" element={<AfficheAdmin/>} />
 
           <Route path="/login/UserDashboard" element={<UserDashboard />} />
