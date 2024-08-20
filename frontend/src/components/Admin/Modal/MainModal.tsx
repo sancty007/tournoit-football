@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import AddPlayerModal, { Player } from "../Modal/AddModal";
 import PlayerListModal from "../Modal/ListModal";
-import { Button } from "../../ui/button";
 
 const PlayerManagement: React.FC<{ isOpen: boolean; onClose: () => void }> = ({
   isOpen,
@@ -9,7 +8,6 @@ const PlayerManagement: React.FC<{ isOpen: boolean; onClose: () => void }> = ({
 }) => {
   const [players, setPlayers] = useState<Player[]>([]);
   const [isAddPlayerModalOpen, setIsAddPlayerModalOpen] = useState(false);
-  const [editIndex, setEditIndex] = useState<number | null>(null);
 
   useEffect(() => {
     const savedPlayers = localStorage.getItem("players");
@@ -19,19 +17,13 @@ const PlayerManagement: React.FC<{ isOpen: boolean; onClose: () => void }> = ({
   }, []);
 
   const handleAddPlayer = (player: Player) => {
-    const updatedPlayers =
-      editIndex !== null
-        ? players.map((p, index) => (index === editIndex ? player : p))
-        : [...players, player];
-
+    const updatedPlayers = [...players, player];
     setPlayers(updatedPlayers);
     localStorage.setItem("players", JSON.stringify(updatedPlayers));
     setIsAddPlayerModalOpen(false);
-    setEditIndex(null);
   };
 
   const handleEdit = (index: number | null) => {
-    setEditIndex(index);
     setIsAddPlayerModalOpen(true);
   };
 
@@ -43,21 +35,14 @@ const PlayerManagement: React.FC<{ isOpen: boolean; onClose: () => void }> = ({
 
   const handleCloseAddPlayerModal = () => {
     setIsAddPlayerModalOpen(false);
-    setEditIndex(null);
     onClose();
   };
-
-  useEffect(() => {
-    if (isOpen) {
-      setIsAddPlayerModalOpen(true);
-    }
-  }, [isOpen]);
 
   return (
     <div>
       <PlayerListModal
-        isOpen={isAddPlayerModalOpen}
-        onClose={handleCloseAddPlayerModal}
+        isOpen={isOpen}
+        onClose={onClose}
         players={players}
         onEdit={handleEdit}
         onDelete={handleDelete}
@@ -67,7 +52,6 @@ const PlayerManagement: React.FC<{ isOpen: boolean; onClose: () => void }> = ({
         isOpen={isAddPlayerModalOpen}
         onClose={handleCloseAddPlayerModal}
         onSave={handleAddPlayer}
-        player={editIndex !== null ? players[editIndex] : null}
       />
     </div>
   );

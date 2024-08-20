@@ -26,7 +26,7 @@ export const TournamentsList = () => {
                             <p><strong>Date de début:</strong> {tournament.start_date}</p>
                             <p><strong>Date de fin:</strong> {tournament.end_date}</p>
                             <p><strong>Lieu:</strong> {tournament.location}</p>
-                            <Link to={`/login/tournaments/${tournament.id}`}>
+                            <Link to={"/login/tournaments/DashboardAmin"}>
                                 <Button className="mt-2">Voir Détails</Button>
                             </Link>
                         </li>

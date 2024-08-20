@@ -1,5 +1,6 @@
 // src/components/Classement/Calendrier/Calendrier.tsx
 import { useState, useEffect } from 'react';
+import Innovation from "/images/Innovation.png"
 import axios from 'axios';
 
 const Calendrier = () => {
@@ -19,6 +20,11 @@ const Calendrier = () => {
   return (
     <div className="p-4">
       <h1 className="text-2xl font-bold mb-4">Calendrier</h1>
+      <div className="flex justify-center items-center">
+  <img src={Innovation} className="w-1/2 h-auto" alt="Innovation" />
+</div>
+      <h1 className="text-2xl font-bold mb-5">EN COURS D'IMPLEMENTATION ......</h1>
+
       <ul>
         {matches.map((match, index) => (
           <li key={index} className="mb-2">

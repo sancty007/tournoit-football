@@ -4,9 +4,12 @@ import CreatePouleModal from '../../Admin/Modal/PouleModal';
 import classement1 from '/images/classement1.png';
 import classement3 from '/images/classement3.png';
 import classement4 from '/images/classement4.png';
+import MatchCard from './Calendrier/MatchCard'; // Adjust the path according to your project structure
+
 
 interface Team {
   name: string;
+  logoUrl?: string; // Added optional logoUrl property
 }
 
 interface Poule {
@@ -20,13 +23,15 @@ export const Classement: React.FC = () => {
   const [numPoules, setNumPoules] = useState<string>('');
   const [teamsPerPoule, setTeamsPerPoule] = useState<string>('');
   const [availableTeams, setAvailableTeams] = useState<Team[]>([]);
+  const [remainingTeams, setRemainingTeams] = useState<Team[]>([]);
 
   useEffect(() => {
-    // Retrieve teams from localStorage
     const savedEntries = localStorage.getItem("entries");
     if (savedEntries) {
       const parsedEntries = JSON.parse(savedEntries);
-      setAvailableTeams(parsedEntries.equipes.map((name: string) => ({ name })));
+      const teams = parsedEntries.equipes.map((name: string) => ({ name, logoUrl: '' })); // Provide default logoUrl
+      setAvailableTeams(teams);
+      setRemainingTeams(teams);
     }
   }, []);
 
@@ -43,22 +48,52 @@ export const Classement: React.FC = () => {
   const handleAddPoules = () => {
     const totalPoules = parseInt(numPoules);
     const teamsInEachPoule = parseInt(teamsPerPoule);
+    let newPoules = [];
 
-    const newPoules = Array.from({ length: totalPoules }, (_, i) => ({
-      id: i + poules.length,
-      teams: availableTeams.slice(i * teamsInEachPoule, (i + 1) * teamsInEachPoule),
-    }));
+    for (let i = 0; i < totalPoules; i++) {
+      const pouleTeams = remainingTeams.slice(i * teamsInEachPoule, (i + 1) * teamsInEachPoule);
+      newPoules.push({ id: poules.length + i, teams: pouleTeams });
+    }
 
     setPoules([...poules, ...newPoules]);
+    const usedTeams = newPoules.flatMap(poule => poule.teams);
+    setRemainingTeams(remainingTeams.filter(team => !usedTeams.includes(team)));
     handleCloseModal();
   };
 
   const handleDeletePoule = (id: number) => {
+    const pouleToRemove = poules.find(poule => poule.id === id);
+    if (pouleToRemove) {
+      setRemainingTeams([...remainingTeams, ...pouleToRemove.teams]);
+    }
     setPoules(poules.filter(poule => poule.id !== id));
   };
 
-  const handleEditPoule = (id: number) => {
-    // Logic to add or edit teams within a poule can be added here
+  const handleEditPoule = (id: number, teamIndex: number, newTeam: Team) => {
+    setPoules(poules.map(poule => {
+      if (poule.id === id) {
+        const updatedTeams = [...poule.teams];
+        updatedTeams[teamIndex] = newTeam;
+        return { ...poule, teams: updatedTeams };
+      }
+      return poule;
+    }));
+
+    const updatedRemainingTeams = availableTeams.filter(team =>
+      !poules.flatMap(poule => poule.teams).some(t => t.name === team.name)
+    );
+    setRemainingTeams(updatedRemainingTeams);
+  };
+
+  // Function to generate matches
+  const generateMatches = (teams: Team[]) => {
+    const matches: { team1: Team, team2: Team }[] = [];
+    for (let i = 0; i < teams.length; i++) {
+      for (let j = i + 1; j < teams.length; j++) {
+        matches.push({ team1: teams[i], team2: teams[j] });
+      }
+    }
+    return matches;
   };
 
   return (
@@ -126,17 +161,25 @@ export const Classement: React.FC = () => {
                   <td className="border p-2">
                     <ul>
                       {poule.teams.map((team, index) => (
-                        <li key={index}>{team.name}</li>
+                        <li key={index}>
+                          <select
+                            value={team.name}
+                            onChange={(e) =>
+                              handleEditPoule(poule.id, index, { name: e.target.value })
+                            }
+                          >
+                            <option value={team.name}>{team.name}</option>
+                            {remainingTeams.map((availableTeam, i) => (
+                              <option key={i} value={availableTeam.name}>
+                                {availableTeam.name}
+                              </option>
+                            ))}
+                          </select>
+                        </li>
                       ))}
                     </ul>
                   </td>
                   <td className="border p-2">
-                    <Button
-                      className="bg-blue-500 text-white mr-2"
-                      onClick={() => handleEditPoule(poule.id)}
-                    >
-                      Modifier
-                    </Button>
                     <Button
                       className="bg-red-500 text-white"
                       onClick={() => handleDeletePoule(poule.id)}
@@ -148,6 +191,18 @@ export const Classement: React.FC = () => {
               ))}
             </tbody>
           </table>
+
+          <div className="mt-8">
+            <h2 className="text-center mb-6">Matchs de Poules</h2>
+            {poules.map((poule) => (
+              <div key={poule.id} className="mb-6">
+                <h3 className="text-xl font-bold text-center mb-4">{`Poule ${poule.id + 1}`}</h3>
+                {generateMatches(poule.teams).map((match, index) => (
+                  <MatchCard key={index} team1={match.team1} team2={match.team2} />
+                ))}
+              </div>
+            ))}
+          </div>
         </div>
       )}
     </div>

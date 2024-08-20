@@ -126,7 +126,7 @@ export const LoginForm = () => {
                         <button
                             type="button"
                             className="text-sm"
-                            onClick={() => navigate('/register')}
+                            onClick={() => navigate('/signup')}
                         >
                             Pas encore inscrit ? S'inscrire
                         </button>

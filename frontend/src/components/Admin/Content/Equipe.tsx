@@ -8,6 +8,7 @@ import { Card } from "../../ui/card";
 import { Button } from "../../ui/button";
 
 import PlayerManagement from "../Modal/MainModal"; // Import PlayerManagement
+import { useState,useEffect } from "react";
 
 export const Equipe = () => {
   const [showModal, setShowModal] = useState(false);
@@ -342,4 +343,4 @@ export const Equipe = () => {
   );
 };
 
-export default Equipe;
+
