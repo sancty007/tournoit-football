@@ -144,14 +144,6 @@
         "documentation": {}
     },
     {
-        "label": "include",
-        "importPath": "django.urls",
-        "description": "django.urls",
-        "isExtraImport": true,
-        "detail": "django.urls",
-        "documentation": {}
-    },
-    {
         "label": "JsonResponse",
         "importPath": "django.http",
         "description": "django.http",
@@ -185,6 +177,14 @@
         "documentation": {}
     },
     {
+        "label": "timedelta",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
         "label": "Path",
         "importPath": "pathlib",
         "description": "pathlib",
@@ -199,6 +199,14 @@
         "importPath": "cx_Oracle",
         "description": "cx_Oracle",
         "detail": "cx_Oracle",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
         "documentation": {}
     },
     {
@@ -261,7 +269,7 @@
         "documentation": {}
     },
     {
-        "label": "viewsets",
+        "label": "generics",
         "importPath": "rest_framework",
         "description": "rest_framework",
         "isExtraImport": true,
@@ -269,43 +277,27 @@
         "documentation": {}
     },
     {
-        "label": "DefaultRouter",
-        "importPath": "rest_framework.routers",
-        "description": "rest_framework.routers",
+        "label": "status",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
         "isExtraImport": true,
-        "detail": "rest_framework.routers",
+        "detail": "rest_framework",
         "documentation": {}
     },
     {
-        "label": "CustomTokenObtainPairView",
-        "importPath": "users.views",
-        "description": "users.views",
+        "label": "TokenObtainPairSerializer",
+        "importPath": "rest_framework_simplejwt.serializers",
+        "description": "rest_framework_simplejwt.serializers",
         "isExtraImport": true,
-        "detail": "users.views",
+        "detail": "rest_framework_simplejwt.serializers",
         "documentation": {}
     },
     {
-        "label": "CustomUserViewSet",
-        "importPath": "users.views",
-        "description": "users.views",
+        "label": "TokenRefreshView",
+        "importPath": "rest_framework_simplejwt.views",
+        "description": "rest_framework_simplejwt.views",
         "isExtraImport": true,
-        "detail": "users.views",
-        "documentation": {}
-    },
-    {
-        "label": "IsAuthenticatedOrReadOnly",
-        "importPath": "rest_framework.permissions",
-        "description": "rest_framework.permissions",
-        "isExtraImport": true,
-        "detail": "rest_framework.permissions",
-        "documentation": {}
-    },
-    {
-        "label": "AllowAny",
-        "importPath": "rest_framework.permissions",
-        "description": "rest_framework.permissions",
-        "isExtraImport": true,
-        "detail": "rest_framework.permissions",
+        "detail": "rest_framework_simplejwt.views",
         "documentation": {}
     },
     {
@@ -317,11 +309,35 @@
         "documentation": {}
     },
     {
-        "label": "TokenObtainPairSerializer",
-        "importPath": "rest_framework_simplejwt.serializers",
-        "description": "rest_framework_simplejwt.serializers",
+        "label": "Response",
+        "importPath": "rest_framework.response",
+        "description": "rest_framework.response",
         "isExtraImport": true,
-        "detail": "rest_framework_simplejwt.serializers",
+        "detail": "rest_framework.response",
+        "documentation": {}
+    },
+    {
+        "label": "AllowAny",
+        "importPath": "rest_framework.permissions",
+        "description": "rest_framework.permissions",
+        "isExtraImport": true,
+        "detail": "rest_framework.permissions",
+        "documentation": {}
+    },
+    {
+        "label": "IsAuthenticated",
+        "importPath": "rest_framework.permissions",
+        "description": "rest_framework.permissions",
+        "isExtraImport": true,
+        "detail": "rest_framework.permissions",
+        "documentation": {}
+    },
+    {
+        "label": "api_view",
+        "importPath": "rest_framework.decorators",
+        "description": "rest_framework.decorators",
+        "isExtraImport": true,
+        "detail": "rest_framework.decorators",
         "documentation": {}
     },
     {
@@ -579,7 +595,16 @@
         "kind": 5,
         "importPath": "backend.backend.settings",
         "description": "backend.backend.settings",
-        "peekOfCode": "REST_FRAMEWORK = {\n    'DEFAULT_AUTHENTICATION_CLASSES': (\n        'rest_framework_simplejwt.authentication.JWTAuthentication',\n    ),\n}",
+        "peekOfCode": "REST_FRAMEWORK = {\n    'DEFAULT_AUTHENTICATION_CLASSES': (\n        'rest_framework_simplejwt.authentication.JWTAuthentication',\n        # Ajoutez d'autres classes d'authentification si nécessaire\n    ),\n}\n# Configuration du JWT\nSIMPLE_JWT = {\n    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),\n    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),",
+        "detail": "backend.backend.settings",
+        "documentation": {}
+    },
+    {
+        "label": "SIMPLE_JWT",
+        "kind": 5,
+        "importPath": "backend.backend.settings",
+        "description": "backend.backend.settings",
+        "peekOfCode": "SIMPLE_JWT = {\n    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),\n    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),\n    'ROTATE_REFRESH_TOKENS': True,\n    'BLACKLIST_AFTER_ROTATION': True,\n    'ALGORITHM': 'HS256',\n    'SIGNING_KEY': settings.SECRET_KEY,\n    'VERIFYING_KEY': None,\n    'AUTH_HEADER_TYPES': ('Bearer',),\n    'USER_ID_FIELD': 'id',",
         "detail": "backend.backend.settings",
         "documentation": {}
     },
@@ -647,21 +672,21 @@
         "documentation": {}
     },
     {
-        "label": "CustomUserSerializer",
+        "label": "RegisterSerializer",
         "kind": 6,
         "importPath": "backend.users.serializers",
         "description": "backend.users.serializers",
-        "peekOfCode": "class CustomUserSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = CustomUser\n        fields = ['id', 'username', 'email', 'role', 'first_name', 'last_name']",
+        "peekOfCode": "class RegisterSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = CustomUser\n        fields = ('username', 'email', 'password', 'first_name', 'last_name', 'role')\n        extra_kwargs = {'password': {'write_only': True}}\n    def create(self, validated_data):\n        user = CustomUser.objects.create_user(\n            username=validated_data['username'],\n            email=validated_data['email'],\n            password=validated_data['password'],",
         "detail": "backend.users.serializers",
         "documentation": {}
     },
     {
-        "label": "router",
-        "kind": 5,
-        "importPath": "backend.users.urls",
-        "description": "backend.users.urls",
-        "peekOfCode": "router = DefaultRouter()\nrouter.register(r'users', CustomUserViewSet)\nurlpatterns = [\n    path('', include(router.urls)),\n    path('token/', CustomTokenObtainPairView.as_view(), name='token_obtain_pair'),\n    # Autres URLs de votre application\n]",
-        "detail": "backend.users.urls",
+        "label": "CustomTokenObtainPairSerializer",
+        "kind": 6,
+        "importPath": "backend.users.serializers",
+        "description": "backend.users.serializers",
+        "peekOfCode": "class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):\n    @classmethod\n    def get_token(cls, user):\n        token = super().get_token(user)\n        token['username'] = user.username\n        token['role'] = user.role\n        return token",
+        "detail": "backend.users.serializers",
         "documentation": {}
     },
     {
@@ -669,25 +694,16 @@
         "kind": 5,
         "importPath": "backend.users.urls",
         "description": "backend.users.urls",
-        "peekOfCode": "urlpatterns = [\n    path('', include(router.urls)),\n    path('token/', CustomTokenObtainPairView.as_view(), name='token_obtain_pair'),\n    # Autres URLs de votre application\n]",
+        "peekOfCode": "urlpatterns = [\n    path('register/', RegisterView.as_view(), name='register'),\n    path('login/', CustomTokenObtainPairView.as_view(), name='token_obtain_pair'),\n    path('api/register/', RegisterView.as_view(), name='register'),\n    path('api/token/', CustomTokenObtainPairView.as_view(), name='token_obtain_pair'),\n    path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),\n    path('api/user/', get_user_info, name='get_user_info'),\n]",
         "detail": "backend.users.urls",
         "documentation": {}
     },
     {
-        "label": "CustomUserViewSet",
+        "label": "RegisterView",
         "kind": 6,
         "importPath": "backend.users.views",
         "description": "backend.users.views",
-        "peekOfCode": "class CustomUserViewSet(viewsets.ModelViewSet):\n    queryset = CustomUser.objects.all()\n    serializer_class = CustomUserSerializer\n    permission_classes = [IsAuthenticatedOrReadOnly]\n    def get_permissions(self):\n        if self.action == 'create':\n            return [AllowAny()]\n        return super().get_permissions()\nclass CustomTokenObtainPairSerializer(TokenObtainPairSerializer):\n    @classmethod",
-        "detail": "backend.users.views",
-        "documentation": {}
-    },
-    {
-        "label": "CustomTokenObtainPairSerializer",
-        "kind": 6,
-        "importPath": "backend.users.views",
-        "description": "backend.users.views",
-        "peekOfCode": "class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):\n    @classmethod\n    def get_token(cls, user):\n        token = super().get_token(user)\n        # Ajoutez des claims personnalisés ici si nécessaire\n        token['username'] = user.username\n        token['role'] = user.profile.role  # Assurez-vous d'avoir un profil utilisateur avec un rôle\n        return token\nclass CustomTokenObtainPairView(TokenObtainPairView):\n    serializer_class = CustomTokenObtainPairSerializer",
+        "peekOfCode": "class RegisterView(generics.CreateAPIView):\n    queryset = CustomUser.objects.all()\n    permission_classes = (AllowAny,)\n    serializer_class = RegisterSerializer\nclass CustomTokenObtainPairView(TokenObtainPairView):\n    serializer_class = CustomTokenObtainPairSerializer\n@api_view(['GET'])\ndef get_user_info(request):\n    user = request.user\n    # Récupérez les informations nécessaires sur l'utilisateur, comme le rôle",
         "detail": "backend.users.views",
         "documentation": {}
     },
@@ -696,7 +712,16 @@
         "kind": 6,
         "importPath": "backend.users.views",
         "description": "backend.users.views",
-        "peekOfCode": "class CustomTokenObtainPairView(TokenObtainPairView):\n    serializer_class = CustomTokenObtainPairSerializer",
+        "peekOfCode": "class CustomTokenObtainPairView(TokenObtainPairView):\n    serializer_class = CustomTokenObtainPairSerializer\n@api_view(['GET'])\ndef get_user_info(request):\n    user = request.user\n    # Récupérez les informations nécessaires sur l'utilisateur, comme le rôle\n    user_info = {\n        'username': user.username,\n        'email': user.email,\n        'role': user.role,  # Ajoutez d'autres champs nécessaires",
+        "detail": "backend.users.views",
+        "documentation": {}
+    },
+    {
+        "label": "get_user_info",
+        "kind": 2,
+        "importPath": "backend.users.views",
+        "description": "backend.users.views",
+        "peekOfCode": "def get_user_info(request):\n    user = request.user\n    # Récupérez les informations nécessaires sur l'utilisateur, comme le rôle\n    user_info = {\n        'username': user.username,\n        'email': user.email,\n        'role': user.role,  # Ajoutez d'autres champs nécessaires\n    }\n    return Response(user_info)",
         "detail": "backend.users.views",
         "documentation": {}
     },

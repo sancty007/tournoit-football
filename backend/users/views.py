@@ -1,32 +1,26 @@
-
-# Create your views here.
-from rest_framework.permissions import IsAuthenticatedOrReadOnly, AllowAny
-from rest_framework import viewsets
+from rest_framework import generics, status
+from rest_framework.response import Response
+from rest_framework.permissions import AllowAny, IsAuthenticated
 from .models import CustomUser
-from .serializers import CustomUserSerializer
+from .serializers import RegisterSerializer, CustomTokenObtainPairSerializer
 from rest_framework_simplejwt.views import TokenObtainPairView
-from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
+from rest_framework.decorators import api_view
 
-class CustomUserViewSet(viewsets.ModelViewSet):
+class RegisterView(generics.CreateAPIView):
     queryset = CustomUser.objects.all()
-    serializer_class = CustomUserSerializer
-    permission_classes = [IsAuthenticatedOrReadOnly]
-
-    def get_permissions(self):
-        if self.action == 'create':
-            return [AllowAny()]
-        return super().get_permissions()
-
-class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
-    @classmethod
-    def get_token(cls, user):
-        token = super().get_token(user)
-
-        # Ajoutez des claims personnalisés ici si nécessaire
-        token['username'] = user.username
-        token['role'] = user.profile.role  # Assurez-vous d'avoir un profil utilisateur avec un rôle
-
-        return token
+    permission_classes = (AllowAny,)
+    serializer_class = RegisterSerializer
 
 class CustomTokenObtainPairView(TokenObtainPairView):
     serializer_class = CustomTokenObtainPairSerializer
+
+@api_view(['GET'])
+def get_user_info(request):
+    user = request.user
+    # Récupérez les informations nécessaires sur l'utilisateur, comme le rôle
+    user_info = {
+        'username': user.username,
+        'email': user.email,
+        'role': user.role,  # Ajoutez d'autres champs nécessaires
+    }
+    return Response(user_info)

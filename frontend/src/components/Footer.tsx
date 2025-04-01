@@ -10,7 +10,7 @@ export const Footer  = ()=>{
                 <div className="space-y-4">
                     <p className="hover:text-blue-500 font-bold">Contactez-nous :</p>
                     <p className="hover:text-blue-500">Adresse : 123 Rue des Stades, Ville, Pays</p>
-                    <p className="hover:text-blue-500">Téléphone : +123 456 7890</p>
+                    <p className="hover:text-blue-500">Téléphone : +242 04 567 89 09</p>
                     <p className="hover:text-blue-500">Email : contact@footballtournoi.com</p>
                 </div>
                 <div className="space-y-4">
@@ -29,7 +29,7 @@ export const Footer  = ()=>{
                 </div>
             </div>
 
-            <div className="hover:text-blue-500">
+            <div className="hover:text-blue-500 text-center">
                 <p>&copy; 2024 Football Tournoi. Tous droits réservés.</p>
             </div>
         </footer>

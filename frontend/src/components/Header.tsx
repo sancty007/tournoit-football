@@ -4,19 +4,26 @@ import { ThemeProvider } from './theme-provider';
 import { Button } from './ui/button';
 
 import MainMenu from './Main-menu';
+import { IoFootballSharp } from 'react-icons/io5';
 
 export const Header = () => {
   return (
     <header>
       <MainMenu />
+     
       <nav className="header">
         <div className="container mx-auto flex justify-between items-center">
-          <div>
+          <div className='flex items-center justify-center gap-8'>
+            <div className=''>
+              <h1 className=' flex items-center justify-center text-2xl'>
+                <span className='text-red-700'>Linga</span>F<IoFootballSharp className="text-3xl lg:text-xl" /><IoFootballSharp className="text-3xl lg:text-xl" />T
+              </h1>
+            </div>
             <ul className="flex gap-8">
-              <li><Link to="/">HOME</Link></li>
+              <li><Link to="/">ACCUEIL</Link></li>
               <li><Link to="/calendrier">CALENDRIER</Link></li>
-              <li><Link to="/groups">GROUPS</Link></li>
-              <li><Link to="/equipes">EQUIPES</Link></li>
+              <li><Link to="/groups">GROUPES</Link></li>
+              <li><Link to="/equipes">ÉQUIPES</Link></li>
               <li><Link to="/contact">CONTACT</Link></li>
             </ul>
           </div>
